@@ -1,0 +1,189 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Intro Section Styles */
+.intro-section {
+    padding: 50px 20px; /* Added horizontal padding for smaller screens */
+    background-color: #f9f9f9; /* Light background color */
+}
+
+/* Intro Container */
+.intro-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+    flex-wrap: wrap; /* Makes it responsive */
+    padding: 20px;
+}
+
+/* Left Text Content */
+.intro-text {
+    flex: 1;
+    max-width: 600px;
+    text-align: left;
+    color: #333;
+    animation: fadeInLeft 1.2s ease;
+}
+
+/* Heading Styles */
+.intro-text h2 {
+    font-size: 60px;
+    color: #b58540; /* Gold color */
+    margin-bottom: 5px;
+    font-family: "Tangerine", Arial, sans-serif;
+}
+
+.intro-text h2:hover {
+    color: #d89f5b; /* Slightly brighter gold on hover */
+}
+
+.intro-text h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #000;
+    font-family: Oswald;
+    font-weight: 500;
+}
+
+.intro-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.intro-text img.heading-deco-img {
+    display: flex;
+    margin: 10px 0;
+    width: 30%;
+    height: auto;
+}
+
+/* Button Styles */
+.about-btn {
+    text-decoration: none;
+    background-color: #b58540;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.about-btn:hover {
+    background-color: #333;
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Intro Images Container */
+.intro-images {
+    flex: 1;
+    display: contents; /* Changed to flex for better alignment */
+    flex-direction: column;
+    gap: 20px;
+    opacity: 0; /* Initially hidden */
+    transform: translateX(100px); /* Start off-screen to the left */
+    transition: all 1s ease-in-out; /* Smooth animation for container */
+}
+
+/* Visible Class for the Images */
+.intro-images.visible {
+    opacity: 1;
+    transform: translateX(0); /* Moves into position */
+}
+
+/* Individual Intro Image Animations */
+.intro-image {
+    width: 35%; /* Full width on smaller screens */
+    height:350px; /* Max width for images */
+    border-radius: 5px;
+    object-fit: cover;
+    margin-left: 60px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: scale(0.9) translateY(100px); /* Starts smaller and lower */
+    transition: all 0.8s ease; /* Smooth animation */
+}
+
+.intro-image.visible {
+    opacity: 1;
+    transform: scale(1) translateY(0); /* Full size and position */
+}
+
+/* Hover Effect */
+.intro-image:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .intro-text h2 {
+        font-size: 40px; /* Adjust font size for smaller screens */
+    }
+
+    .intro-text h1 {
+        font-size: 30px; /* Adjust font size for smaller screens */
+    }
+
+    .intro-text p {
+        font-size: 0.9rem; /* Slightly smaller text */
+    }
+
+    .intro-images {
+        flex-direction: row; /* Align images side by side */
+        justify-content: center; /* Center the images */
+    }
+
+    .intro-image {
+        width: 100%; /* Full width for images */
+        max-width: 150px; /* Max width for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .intro-section {
+        padding: 30px 10px; /* Reduce padding for extra small screens */
+    }
+
+    .intro-text h2 {
+        font-size: 63px; /* Further adjust font size for extra small screens */
+    }
+
+    .intro-text h1 {
+        font-size: 35px; /* Further adjust font size for extra small screens */
+    }
+
+    .intro-text p {
+        font-size: 0.8rem; /* Further adjust font size for extra small screens */
+    }
+
+    .intro-image {
+        margin-top: 20px;
+        max-width: 103%;
+        width: 100%;
+        margin-left: 2px;
+        height: 249px;
+    }
+    
+    .intro-text img.heading-deco-img {
+        display: flex;
+        margin: 10px 0;
+        width: 70%;
+        height: auto;
+    }
+}
+
+
+

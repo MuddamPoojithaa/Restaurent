@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="classic.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="shop.css">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="reservation.css">
+</head>
+<body>
+    <!-- Top Bar with Contact & Social Icons -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="contact-info">
+                <span><i class="fa-solid fa-phone"></i> +91 8247547854</span>
+                <span><i class="fa-solid fa-envelope"></i> Advoize2023@gmail.com</span>
+            </div>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">Restaurant</div>
+
+            <!-- Hamburger Icon (Only visible on small devices) -->
+            <div class="hamburger" id="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav id="nav-menu">
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="home.html">Home</a>
+                        <span class="toggle-dropdown">
+                            <i class="fa-solid fa-chevron-down indicator"></i>
+                        </span>
+                        <ul class="dropdown-menu hidden">
+                            <li><a href="home.html">Home Main</a></li>
+                            <li><a href="Home Classic.html">Home Classic</a></li>
+                            <li><a href="Home Video.html">Home Video</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="menu.html">Menu</a>
+                    
+                      <span class="toggle-dropdown">
+                        <i class="fa-solid fa-chevron-down indicator"></i>
+                    </span>
+                    <ul class="dropdown-menu hidden">
+                      <li><a href="menu.html">Non-Veg-Menu</a></li>
+                      <li><a href="Non-veg.html">Veg-Menu</a></li>
+                  </ul>
+                  </li>
+                    <li class="menu-item">
+                        <a href="reservation.html">Reservation</a>
+                        <span class="toggle-dropdown">
+                            <i class="fa-solid fa-chevron-down indicator"></i>
+                        </span>
+                        <ul class="dropdown-menu hidden">
+                            <li><a href="reservation.html">Reservation Form</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="About.html">Pages</a>
+                        <span class="toggle-dropdown">
+                            <i class="fa-solid fa-chevron-down indicator"></i>
+                        </span>
+                        <ul class="dropdown-menu hidden">
+                            <li><a href="About.html">About Us</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="services.html">Services</a></li>
+                          
+                            
+                        </ul>
+                    </li>
+                    
+                    
+                    <li class="menu-item"><a href="shop.html">Shop</a></li>
+                    <li class="menu-item"><a href="contact.html">Contact</a></li>
+                    <li class="menu-item">
+                      <a href="#" class="search-icon" onclick="toggleSearchBar()"><i class="fa-solid fa-magnifying-glass"></i></a>
+                  </li>
+                  <div id="search-bar" style="display: none;">
+                      <input type="text" placeholder="Search..." id="search-input">
+                      <button onclick="performSearch()">Search</button>
+                  </div>
+                  
+                  <script>
+                      // List of pages to search
+                      const pages = [
+                          { name: "home", url: "home.html" },
+                          { name: "home classic", url: "Home Classic.html" },
+                          { name: "home video", url: "Home Video.html" },
+                          { name: "menu", url: "menu.html" },
+                          { name: "non-veg", url: "Non-veg.html" },
+                          { name: "reservation", url: "reservation.html" },
+                          { name: "about", url: "About.html" },
+                          { name: "gallery", url: "gallery.html" },
+                          { name: "services", url: "services.html" },
+                          { name: "shop", url: "shop.html" },
+                          { name: "contact", url: "contact.html" },
+                          { name: "cart", url: "cart.html" }
+                      ];
+                  
+                      function toggleSearchBar() {
+                          const searchBar = document.getElementById("search-bar");
+                          searchBar.style.display = searchBar.style.display === "none" ? "block" : "none";
+                      }
+                  
+                      function performSearch() {
+                          const query = document.getElementById("search-input").value.toLowerCase().trim();
+                          
+                          // Search for a matching page
+                          const match = pages.find(page => page.name.includes(query));
+                          
+                          if (match) {
+                              // Redirect to the matching page
+                              window.location.href = match.url;
+                          } else {
+                              // Show an alert if no match is found
+                              alert("No matching page found. Please try again!");
+                          }
+                      }
+                  </script>
+                  
+                    <li class="menu-item">
+                      <a href="cart.html" class="bag-icon">
+                        <i class="fa-solid fa-bag-shopping"></i> (<span id="cart-count">0</span>)
+                      </a>
+                    </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    
+    <script>
+        // Toggle mobile menu
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('mobile-visible');
+        });
+
+        // Toggle dropdown menus
+        const dropdownToggles = document.querySelectorAll('.toggle-dropdown');
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const dropdownMenu = toggle.nextElementSibling;
+                dropdownMenu.classList.toggle('hidden');
+                const indicator = toggle.querySelector('.indicator');
+                if (indicator.classList.contains('fa-chevron-down')) {
+                    indicator.classList.remove('fa-chevron-down');
+                    indicator.classList.add('fa-chevron-up');
+                } else {
+                    indicator.classList.remove('fa-chevron-up');
+                    indicator.classList.add('fa-chevron-down');
+                }
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+  <div class="product-section">
+      <!-- Categories -->
+      <div class="categories">
+        <a href="#" class="active" onclick="filterProducts('all')">ALL PRODUCTS</a>
+        <a href="#" onclick="filterProducts('boiled')">BOILED</a>
+        <a href="#" onclick="filterProducts('cooked')">COOKED</a>
+        <a href="#" onclick="filterProducts('delicious')">DELICIOUS</a>
+        <a href="#" onclick="filterProducts('fusion')">MODERN FUSION</a>
+        <a href="#" onclick="filterProducts('nature')">NATURE</a>
+        <a href="#" onclick="filterProducts('organic')">ORGANIC</a>
+        <a href="#" onclick="filterProducts('starters')">STARTERS</a>
+      </div>
+    
+      <!-- Products -->
+      <div class="products">
+        <!-- All category -->
+        <div class="product-card" data-category="boiled">
+          <img src="images/823.jpg" alt="Product 1">
+          <div class="cart-icon">
+            <span>Add to Cart</span>
+          </div>
+          <h3>BOILED DISH 1</h3>
+          <p>Boiled / Nature</p>
+          <p class="price">₹1000</p> 
+        </div>
+
+        <div class="product-card" data-category="boiled">
+          <img src="images/823.jpg" alt="Product 2">
+          <div class="cart-icon">
+            <span>Add to Cart</span>
+          </div>
+          <h3>BOILED DISH 2</h3>
+          <p>Boiled / Organic</p>
+          <p class="price">₹2000</p> 
+        </div>
+
+
+
+        <div class="product-card" data-category="cooked">
+          <img src="images/823.jpg" alt="Product 3">
+          <div class="cart-icon">
+            <span>Add to Cart</span>
+          </div>
+          <h3>COOKED DISH 1</h3>
+          <p>Cooked / Modern Fusion</p>
+          <p class="price">2500</p> 
+        </div>
+        <div class="product-card" data-category="cooked">
+          <img src="images/823.jpg" alt="Product 3">
+          <div class="cart-icon">
+            <span>Add to Cart</span>
+          </div>
+          <h3>COOKED DISH 1</h3>
+          <p>Cooked / Modern Fusion</p>
+          <p class="price">₹3000</p> 
+        </div>
+
+
+
+        <div class="product-card" data-category="delicious">
+          <img src="images/823.jpg" alt="Product 4">
+          <div class="cart-icon">
+            <span>Add to Cart</span>
+          </div>
+          <h3>DELICIOUS DISH 1</h3>
+          <p>Delicious / Starters</p>
+          <p class="price">₹500</p> 
+        </div>
+        <div class="product-card" data-category="delicious">
+          <img src="images/823.jpg" alt="Product 4">
+          <div class="cart-icon">
+            <span>Add to Cart</span>
+          </div>
+          <h3>DELICIOUS DISH 1</h3>
+          <p>Delicious / Starters</p>
+          <p class="price">₹550</p> 
+        </div>
+
+
+        <div class="product-card" data-category="fusion">
+          <img src="images/823.jpg" alt="Product 5">
+          <div class="cart-icon">
+            <span>Add to Cart</span>
+          </div>
+          <h3>MODERN FUSION DISH</h3>
+          <p>Modern Fusion / Organic</p>
+          <p class="price">₹600</p> 
+        </div>
+        <div class="product-card" data-category="fusion">
+          <img src="images/823.jpg" alt="Product 5">
+          <div class="cart-icon">
+            <span>Add to Cart</span>
+          </div>
+          <h3>MODERN FUSION DISH</h3>
+          <p>Modern Fusion / Organic</p>
+          <p class="price">₹800</p> 
+        </div>
+
+
+
+
+        <div class="product-card" data-category="nature">
+          <img src="images/823.jpg" alt="Product 6">
+          <div class="cart-icon">
+            <span>Add to Cart</span>
+          </div>
+          <h3>NATURE DISH 1</h3>
+          <p>Nature / Organic</p>
+          <p class="price">₹900</p> 
+        </div>
+            
+        <div class="product-card" data-category="nature">
+          <img src="images/823.jpg" alt="Product 6">
+          <div class="cart-icon">
+            <span>Add to Cart</span>
+          </div>
+          <h3>NATURE DISH 1</h3>
+          <p>Nature / Organic</p>
+          <p class="price">₹550</p> 
+        </div>
+
+
+
+        <div class="product-card" data-category="organic">
+          <img src="images/823.jpg" alt="Product 7">
+          <div class="cart-icon">
+            <span>Add to Cart</span>
+          </div>
+          <h3>ORGANIC DISH</h3>
+          <p>Organic / Nature</p>
+          <p class="price">₹750</p> 
+        </div>
+        <div class="product-card" data-category="organic">
+          <img src="images/823.jpg" alt="Product 7">
+          <div class="cart-icon">
+            <span>Add to Cart</span>
+          </div>
+          <h3>ORGANIC DISH</h3>
+          <p>Organic / Nature</p>
+          <p class="price">₹450</p> 
+        </div>
+
+
+        <div class="product-card" data-category="starters">
+          <img src="images/823.jpg" alt="Product 8">
+          <div class="cart-icon">
+            <span>Add to Cart</span>
+          </div>
+          <h3>STARTER DISH</h3>
+          <p>Starters / Modern Fusion</p>
+          <p class="price">₹650</p> 
+        </div>
+        <div class="product-card" data-category="starters">
+          <img src="images/823.jpg" alt="Product 8">
+          <div class="cart-icon">
+            <span>Add to Cart</span>
+          </div>
+          <h3>STARTER DISH</h3>
+          <p>Starters / Modern Fusion</p>
+          <p class="price">₹450</p> 
+        </div>
+      </div>
+    </div>
+    
+
+
+  <script>
+    function filterProducts(category) {
+    const products = document.querySelectorAll('.product-card');
+    const categories = document.querySelectorAll('.categories a');
+
+    // Remove active class from all categories
+    categories.forEach((cat) => cat.classList.remove('active'));
+
+    // Highlight the selected category
+    event.target.classList.add('active');
+
+    // Show or hide products based on category
+    products.forEach((product) => {
+      if (category === 'all' || product.getAttribute('data-category') === category) {
+        product.style.display = 'block'; // Show matching products
+        product.style.opacity = '0'; // Reset opacity
+        product.style.transform = 'translateY(50px) scale(0.9) rotate(-3deg)'; // Reset position
+
+        // Add a slight delay for animation
+        setTimeout(() => {
+          product.style.opacity = '1';
+          product.style.transform = 'translateY(0) scale(1) rotate(0)';
+        }, 100); // Delay for animation
+      } else {
+        product.style.display = 'none'; // Hide non-matching products
+      }
+    });
+  }
+
+
+  </script>
+<script>
+  function updateCartCount() {
+    // Get cart from localStorage
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Calculate total quantity of all items in the cart
+    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+
+    // Update the cart count in the DOM
+    document.getElementById('cart-count').innerText = totalItems;
+  }
+
+  // Add to Cart Button Handler
+  document.querySelectorAll('.cart-icon').forEach((button, index) => {
+    button.addEventListener('click', () => {
+      const productCard = button.parentElement;
+      const name = productCard.querySelector('h3').innerText;
+      const price = parseFloat(productCard.querySelector('.price').innerText.replace('₹', ''));
+      const image = productCard.querySelector('img').src;
+
+      // Get current cart from localStorage
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      // Check if item already exists in cart
+      const existingItem = cart.find(item => item.name === name);
+
+      if (existingItem) {
+        // Increment quantity if item exists
+        existingItem.quantity++;
+      } else {
+        // Add new item
+        cart.push({ name, price, image, quantity: 1 });
+      }
+
+      // Update localStorage
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      // Update the cart count
+      updateCartCount();
+
+      alert('Item added to cart!');
+    });
+  });
+
+  // Update cart count on page load
+  window.onload = updateCartCount;
+</script>
+
+  
+<footer class="footer">
+    <div class="container">
+      <div class="footer-section">
+        <h2>Restaurant</h2>
+        <p>"A genuine fine-dining experience awaits. Come for a drink, stay for a meal. Great food and great company. Nothing brings people together like good food."</p>
+        <div class="social-icons">
+          <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#" class="social-icon"><i class="fa-brands fa-pinterest"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Working Hours</h3>
+        <p>Monday - Friday: 11 am - 11 pm</p>
+        <p>Saturday: 10 am - 11 pm</p>
+        <p>Sunday: 10 am - 11 pm</p>
+        <p><strong>* Happy Hour: 12:00 - 4:00 *</strong></p>
+      </div>
+      <div class="footer-section">
+        <h3>Our Address</h3>
+        <p>PRAJAY PRINCETON TOWERS, #502, 5th Floor, Hyderabad, Telangana-500035</p>
+        <p><i class="fa fa-phone"></i> <span> +91 8247547854</span></p>
+        <p><i class="fa fa-envelope"></i> <a href="Advoize2023@gmail.com">Advoize2023@gmail.com</a></p>
+      </div>
+      <div class="footer-section">
+        <h3>Newsletter</h3>
+        <p>Receive the latest news from us.</p>
+        <form>
+          <input type="email" placeholder="Your Email Address" required>
+          <button type="submit">Subscribe</button>
+          <div>
+            <input type="checkbox" id="privacy" required>
+            <label for="privacy">I agree to the Privacy Policy</label>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Advoize, All Rights Reserved</p>
+ 
+      
+    </div>
+  </footer>
+  
+  
+  </body>
+  </html>
+  

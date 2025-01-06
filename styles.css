@@ -1,0 +1,2339 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Tangerine:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+}
+/* Top Bar Styles */
+.top-bar {
+    
+    
+    padding: 10px 0;
+    color: #fff;
+    font-size: 14px;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+}
+
+.contact-info {
+    /* display: flex; */
+    gap: 15px;
+}
+
+.contact-info span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.social-icons {
+    /* display: flex; */
+    gap: 10px;
+    margin-left: 8%;
+    
+}
+
+.social-icon {
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #ff7f50;
+    transform: scale(1.2);
+}
+
+/* Navbar Styles */
+.navbar {
+    background: rgba(255, 255, 255, 0.9);
+    
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+/* Hamburger Icon (hidden by default) */
+.hamburger {
+    display: none;
+    color: black;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.hamburger:hover {
+    transform: scale(1.2);
+}
+
+/* Menu */
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 5px;
+}
+
+.menu-item {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.menu-item a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-family: "Cabin", Arial, sans-serif;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+}
+
+.menu-item a:hover {
+    color: #ff7f50;
+    transform: scale(1.1);
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    list-style: none;
+    position: absolute;
+    top: 166%;
+    left: 0;
+    background: #222;
+    padding: 10px 0;
+    display: none;
+    min-width: 150px;
+    transition: opacity 0.3s ease;
+    opacity: 0; /* Initially hidden */
+}
+
+.dropdown-menu li {
+    padding: 5px 1px;
+    /* border-bottom: 1px solid #444; */
+    
+}
+
+.dropdown-menu li a {
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+    color: #ff7f50;
+}
+
+.menu-item:hover .dropdown-menu {
+    display: block;
+    opacity: 1; /* Make visible on hover */
+}
+
+/* Toggle Dropdown Indicator */
+.toggle-dropdown {
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 5px;
+    color: black;
+    transition: transform 0.3s ease;
+}
+
+.indicator {
+    font-weight: bold;
+    color: black; /* Default color */
+}
+/* Additional Hover Effects */
+.menu-item a {
+    position: relative; /* Needed for absolute positioning of the after pseudo-element */
+}
+
+.menu-item a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px; /* Thickness of the underline */
+    background: #ff7f50; /* Color of the underline */
+    bottom: -5px; /* Position the underline below the text */
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease; /* Transition effect */
+}
+
+.menu-item a:hover::after {
+    transform: scaleX(1); /* Scale to full width on hover */
+}
+
+/* Dropdown Menu Animation */
+.dropdown-menu {
+    animation: slideIn 0.3s ease forwards; /* Apply slide in animation */
+}
+
+/* Keyframes for Dropdown Animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px); /* Slide in from above */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hamburger Menu Animation */
+.hamburger.active {
+    animation: rotate 0.3s ease; /* Rotate animation on active state */
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+/* Change styles for the mobile menu when it's active */
+#nav-menu.mobile-visible {
+    animation: fadeIn 0.3s ease forwards; /* Fade in effect */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start transparent */
+    }
+    to {
+        opacity: 1; /* Fully visible */
+    }
+}
+
+/* Add a background transition for the navbar */
+.navbar {
+    transition: background 0.3s ease; /* Smooth background transition */
+}
+
+.navbar:hover {
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent on hover */
+}
+
+
+/* Full-Screen Carousel */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Hide anything overflowing */
+    background: transparent; /* No black background */
+}
+
+.carousel-inner {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease; /* Smooth slide transitions */
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Start hidden for fade effect */
+    transition: opacity 0.5s ease; /* Fade transition */
+}
+
+.carousel-item.active {
+    opacity: 1; /* Show active slide */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image fills without gaps */
+    animation: zoomInOut 10s infinite;
+}
+
+/* Navigation Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.6); /* Light semi-transparent background */
+    color: black; /* Black arrow color */
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth hover effects */
+}
+
+.carousel-btn.prev {
+    left: 15px;
+}
+
+.carousel-btn.next {
+    right: 15px;
+}
+
+/* Button Hover Effects */
+.carousel-btn:hover {
+    background-color: rgba(255, 255, 255, 0.9); /* Brighter background on hover */
+    transform: scale(1.2); /* Slight zoom-in */
+}
+
+/* Keyframe Animation for Zoom */
+@keyframes zoomInOut {
+    0%, 100% {
+        transform: scale(1); /* Default size */
+    }
+    50% {
+        transform: scale(1.1); /* Zoom in slightly */
+    }
+}
+/* Slide Content Styling */
+.slide-content {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    color: white;
+    z-index: 5;
+    text-align: left;
+}
+.slide-content h3 span{
+    color: rgb(207, 166, 112);
+    font-family: Tangerine;
+    font-size: 50px;
+}
+.slide-content h1 span{
+    font-family: Oswald;
+    font-size: 40px;
+}
+.slide-content h3 span,
+.slide-content h1 span {
+    display: inline-block;
+    opacity: 0; /* Initially hidden */
+    transform: translateX(-100%); /* Start off-screen to the left */
+    animation: slideWordIn 0.5s ease-in-out forwards;
+}
+
+/* Keyframe Animation for Word-by-Word Slide-In */
+@keyframes slideWordIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%); /* Start off-screen */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* End at normal position */
+    }
+}
+/* Apply Animation Delays */
+.slide-content h3 span:nth-child(1) { animation-delay: 0.2s; }
+.slide-content h3 span:nth-child(2) { animation-delay: 0.4s; }
+.slide-content h3 span:nth-child(3) { animation-delay: 0.6s; }
+.slide-content h3 span:nth-child(4) { animation-delay: 0.8s; }
+.slide-content h3 span:nth-child(5) { animation-delay: 1s; }
+.slide-content h3 span:nth-child(6) { animation-delay: 1.2s; }
+.slide-content h3 span:nth-child(7) { animation-delay: 1.4s; }
+.slide-content h3 span:nth-child(8) { animation-delay: 1.6s; }
+
+.slide-content h1 span:nth-child(1) { animation-delay: 1.8s; }
+.slide-content h1 span:nth-child(2) { animation-delay: 2s; }
+.slide-content h1 span:nth-child(3) { animation-delay: 2.2s; }
+.slide-content h1 span:nth-child(4) { animation-delay: 2.4s; }
+
+/* Button Animation */
+.explore-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    opacity: 0; /* Initially hidden */
+    transform: translateX(-50%); /* Start off-screen */
+    animation: slideWordIn 0.5s ease-in-out forwards;
+    animation-delay: 2.6s; /* Delay to show after text */
+}
+
+/* Button Styling */
+.explore-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #ffffff;
+    color: black;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.explore-btn:hover {
+    background-color: #f0c27b;
+    color: white;
+    transform: scale(1.1);
+}
+
+  
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    .navbar {
+        background: white;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+    }
+    #nav-menu {
+        display: none;
+        flex-direction: column;
+        background: gray;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+    }
+
+    #nav-menu.mobile-visible {
+        display: flex;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 1;
+        text-align: center;
+    }
+
+   
+    
+
+    .menu-item a {
+        padding: 15px;
+    }
+
+    .toggle-dropdown {
+        display: inline-block;
+    }
+
+    .indicator {
+        display: block; /* Always show + on small devices */
+    }
+
+    .dropdown-menu {
+        position: relative; /* Adjust position for dropdown on mobile */
+    }
+
+    .dropdown-menu.hidden {
+        display: none; /* Hide dropdown */
+    }
+    .top-bar {
+        padding: 10px 0;
+        color: #fff;
+        width: 100%;
+        font-size: 14px;
+    }
+    
+}
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Story Section Styles */
+.story-section {
+    padding: 50px 20px; /* Added horizontal padding for smaller screens */
+    background-color: #f9f9f9; /* Light background color */
+}
+
+/* Story Container */
+.story-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+    flex-wrap: wrap; /* Makes it responsive */
+    padding: 20px;
+}
+
+/* Left Text Content */
+.story-text {
+    flex: 1;
+    max-width: 600px;
+    text-align: left;
+    color: #333;
+    animation: fadeInLeft 1.2s ease;
+}
+
+/* Heading Styles */
+.story-text h2 {
+    font-size: 60px;
+    color: #b58540; /* Gold color */
+    margin-bottom: 5px;
+    font-family: "Tangerine", Arial, sans-serif;
+}
+
+.story-text h2:hover {
+    color: #d89f5b; /* Slightly brighter gold on hover */
+}
+
+.story-text h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #000;
+    font-family: Oswald;
+    font-weight: 500;
+}
+
+.story-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.story-text img.heading-deco {
+    display: flex;
+    margin: 10px 0;
+    width: 30%;
+    height: auto;
+}
+
+/* Button Styles */
+.discover-btn {
+    text-decoration: none;
+    background-color: #b58540;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.discover-btn:hover {
+    background-color: #333;
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Story Images Container */
+.story-images {
+    flex: 1;
+    display: contents; /* Changed to flex for better alignment */
+    flex-direction: column;
+    gap: 20px;
+    opacity: 0; /* Initially hidden */
+    transform: translateX(100px); /* Start off-screen to the left */
+    transition: all 1s ease-in-out; /* Smooth animation for container */
+}
+
+/* Visible Class for the Images */
+.story-images.visible {
+    opacity: 1;
+    transform: translateX(0); /* Moves into position */
+}
+
+/* Individual Story Image Animations */
+.story-image {
+    width: 100%; /* Full width on smaller screens */
+    max-width: 300px; /* Max width for images */
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: scale(0.9) translateY(100px); /* Starts smaller and lower */
+    transition: all 0.8s ease; /* Smooth animation */
+}
+
+.story-image.visible {
+    opacity: 1;
+    transform: scale(1) translateY(0); /* Full size and position */
+}
+
+/* Hover Effect */
+.story-image:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .story-text h2 {
+        font-size: 40px; /* Adjust font size for smaller screens */
+    }
+
+    .story-text h1 {
+        font-size: 30px; /* Adjust font size for smaller screens */
+    }
+
+    .story-text p {
+        font-size: 0.9rem; /* Slightly smaller text */
+    }
+
+    .story-images {
+        flex-direction: row; /* Align images side by side */
+        justify-content: center; /* Center the images */
+    }
+
+    .story-image {
+        width: 100%; /* Full width for images */
+        max-width: 150px; /* Max width for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .story-section {
+        padding: 30px 10px; /* Reduce padding for extra small screens */
+    }
+
+    .story-text h2 {
+        font-size: 100px; /* Further adjust font size for extra small screens */
+    }
+
+    .story-text h1 {
+        font-size: 35px; /* Further adjust font size for extra small screens */
+    }
+
+    .story-text p {
+        font-size: 0.8rem; /* Further adjust font size for extra small screens */
+    }
+
+    .story-image {
+        margin-top: 20px;
+        max-width: 300%;
+        width: 100%; /* Further adjust max width for smaller screens */
+    }
+    
+.story-text img.heading-deco {
+    display: flex;
+    margin: 10px 0;
+    width: 70%;
+    height: auto;
+}
+}
+
+
+/* Parallax Section */
+.parallax-section {
+    position: relative;
+    height: 500px; /* Adjust height as needed */
+    background-image: url('./images/fish-with-vegetables-cutlery-black-background.jpg'); /* Background image */
+    background-attachment: fixed; /* Parallax effect */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #b58540; 
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+/* Content inside Parallax Section */
+.parallax-content {
+    max-width: 800px;
+    z-index: 1;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(100px); /* Positioned below */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth transition */
+}
+
+/* Animation Applied */
+.parallax-content.visible {
+    opacity: 1;
+    transform: translateY(0); /* Move to original position */
+}
+
+.parallax-content h1 {
+    font-size: 80px;
+    margin-bottom: 20px;
+    font-family: "Tangerine", Arial, sans-serif;
+    font-weight: 1000;
+}
+
+.parallax-content p {
+    font-size: 35px;
+    line-height: 2;
+    margin-bottom: 30px;
+    color: #d8d8d8;
+    font-family: Oswald;
+    font-weight: 500;
+}
+
+.parallax-content .learn-more-btn {
+    text-decoration: none;
+    background-color: #b58540; /* Gold color */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.parallax-content .learn-more-btn:hover {
+    background-color: #333;
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+body {
+    font-family: Arial, sans-serif;
+  }
+/* Section Header */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .subtitle {
+    font-size: 60px;
+    font-weight: 1000;
+    color: #b2905b;
+    font-family: "Tangerine", cursive;
+    animation: fadeIn 1.5s ease-in-out;
+    margin-top: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s ease forwards;
+  }
+  
+  .title {
+    font-size: 50px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    margin: -11px 0;
+    color: #333;
+    opacity: 0;
+    animation: fadeUp 1.2s ease 0.3s forwards;
+  }
+  
+  .header-decoration img {
+    display: inline-block;
+    width: 18%;
+    margin-top: 14px;
+    opacity: 0;
+    animation: fadeInScale 1.5s ease 0.6s forwards;
+  }
+  
+  /* Gallery Section */
+  .gallery-section {
+    padding: 20px;
+    width:100%;
+    
+    background-color: #fafafa;
+  }
+  
+  .gallery-grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    opacity: 0;
+    animation: fadeIn 1s ease 0.8s forwards;
+  }
+  
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s ease 1s forwards;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 14px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-image img {
+    width: 85%;
+    height: 200px;
+    padding-top: 25px;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .card:hover .card-image img {
+    transform: scale(1.05);
+    filter: brightness(0.9);
+  }
+  
+  /* Card Content */
+  .card-content {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .dish-title {
+    font-size: 1.3rem;
+    color: #333;
+    font-weight: 600;
+    margin: 10px 0 5px;
+    opacity: 0;
+    animation: fadeIn 0.8s ease 1.2s forwards;
+  }
+  
+  .dish-info {
+    font-size: 0.95rem;
+    color: #777;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeIn 0.8s ease 1.4s forwards;
+  }
+  
+  .dish-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    opacity: 0;
+    animation: fadeIn 0.8s ease 1.6s forwards;
+  }
+  
+  .price {
+    font-size: 1.2rem;
+    color: #d4a017;
+    font-weight: bold;
+  }
+  
+  .highlight {
+    background-color: #d4a017;
+    color: #fff;
+    font-size: 0.85rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .highlight:hover {
+    background-color: #b2905b;
+  }
+  /* Initially hidden elements */
+.section-header,
+.gallery-section,
+.card {
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+/* When in view */
+.section-header.in-view,
+.gallery-section.in-view,
+.card.in-view {
+    opacity: 1;
+    transform: translateY(0);
+    animation: none; /* Prevents re-triggering */
+}
+
+/* Example of staggered animation for cards */
+.card.in-view {
+    animation: fadeUp 1s ease forwards;
+}
+
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .title {
+      font-size: 2rem;
+    }
+  
+    .price {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .subtitle {
+      font-size: 3rem;
+      margin-top: 9px;
+      
+    }
+  
+    .title {
+      font-size: 1.8rem;
+    }
+  
+    .dish-info {
+      font-size: 0.85rem;
+    }
+    .header-decoration img{
+      width:30%
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .subtitle {
+      font-size: 2rem;
+      margin-top: 18px;
+  }
+    .title {
+      font-size: 1.5rem;
+    }
+  
+    .card {
+      width: 100%;
+    }
+    .header-decoration img{
+      width:60%
+    }
+  }
+  
+
+/* Enhanced Card Hover Effects */
+.card {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card:hover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.05);
+    z-index: -1;
+    transition: background 0.4s ease-in-out;
+}
+
+/* Enhanced Image Hover Effect */
+.card-image img {
+    transition: transform 0.5s ease, filter 0.5s ease;
+    will-change: transform, filter;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.08);
+    filter: brightness(0.85) saturate(1.2);
+}
+
+/* Highlight Shine Effect */
+.highlight {
+    position: relative;
+    background: linear-gradient(90deg, #d4a017, #b2905b);
+    color: white;
+    background-size: 200%;
+    transition: background-position 0.3s;
+}
+
+.highlight:hover {
+    background-position: right;
+}
+
+/* Subtle Zoom In Animation for Section Header */
+.section-header {
+    transform: translateY(20px) scale(0.95);
+    animation: fadeZoomIn 1.5s cubic-bezier(0.5, 0, 0.1, 1) forwards;
+}
+
+@keyframes fadeZoomIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Subtle Slide-In Stagger Animation for Cards */
+.card {
+    animation: slideIn 1.2s cubic-bezier(0.5, 0, 0.1, 1) forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* New Button Styling for Highlight Elements */
+.highlight {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.highlight:hover {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Glow Effect for Dish Title on Hover */
+.card:hover .dish-title {
+    text-shadow: 0 0 8px rgba(212, 160, 23, 0.8);
+}
+
+/* Dish Info Fade-Up Animation */
+.dish-info {
+    animation: fadeUpDelayed 1.2s ease-in-out forwards;
+}
+
+@keyframes fadeUpDelayed {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Animation Tweaks */
+@media (max-width: 768px) {
+    .card {
+        animation: slideInMobile 1s cubic-bezier(0.5, 0, 0.1, 1) forwards;
+    }
+
+    @keyframes slideInMobile {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .parallax-section {
+        height: 400px; /* Adjust height for smaller screens */
+    }
+
+    .parallax-content h1 {
+        font-size: 36px;
+    }
+
+    .parallax-content p {
+        font-size: 1.2rem;
+    }
+
+    .parallax-content .learn-more-btn {
+        padding: 10px 20px;
+    }
+}
+
+
+
+/* Large Device Styles */
+@media (min-width: 769px) {
+    .indicator {
+        display: none; /* Hide + on larger devices */
+    }
+
+    .toggle-dropdown::after {
+        content: "▼"; /* Arrow indicator */
+        margin-left: 5px;
+        font-size: 12px;
+    }
+
+    .toggle-dropdown:hover::after {
+        content: "▲"; /* Change to up arrow on hover */
+    }
+}
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Parallax Section Styles */
+.my-parallax {
+    position: relative;
+    height: 100vh; /* Full-screen height */
+    background: url('./images/fish-with-vegetables-cutlery-black-background.jpg') no-repeat center center/cover;
+    background-attachment: fixed; /* Parallax effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Overlay Styles */
+.my-overlay {
+    position: absolute;
+    inset: 0; /* Covers the entire container */
+    background: rgba(0, 0, 0, 0.5); /* Adjust transparency */
+    z-index: 1;
+}
+
+/* Text Styles */
+.my-text {
+    position: relative;
+    z-index: 2; /* Ensures text is above the overlay */
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    margin-top:-10px;
+}
+
+/* Title Styles */
+.my-title {
+    font-size: 60px;
+    font-weight: bold;
+    color: #b2905b;
+    font-family: "Tangerine", cursive;
+    margin: 0;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(-2000px);
+    transition: opacity 1s ease, transform 1s ease; /* Transition effects */
+}
+
+/* Subtitle Styles */
+.my-subtitle {
+    font-size: 50px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    margin-top: 10px;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(200px);
+    transition: opacity 1s ease, transform 1s ease; /* Transition effects */
+}
+
+/* Visible State */
+.show-title {
+    opacity: 1;
+    transform: translateY(0); /* Final state */
+}
+
+.show-subtitle {
+    opacity: 1;
+    transform: translateY(0); /* Final state */
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .my-title {
+        font-size: 50px; /* Adjust font size for medium screens */
+    }
+    
+    .my-subtitle {
+        font-size: 40px; /* Adjust font size for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .my-parallax {
+        height: 80vh; /* Adjust height for smaller screens */
+    }
+
+    .my-title {
+        font-size: 40px; /* Adjust font size for small screens */
+    }
+
+    .my-subtitle {
+        font-size: 30px; /* Adjust font size for small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .my-parallax {
+        height: 60vh; /* Adjust height for extra small screens */
+    }
+
+    .my-title {
+        font-size: 30px; /* Further adjust font size for extra small screens */
+    }
+
+    .my-subtitle {
+        font-size: 25px; /* Further adjust font size for extra small screens */
+    }
+}
+
+
+
+
+
+/* General styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    box-sizing: border-box;
+  }
+  /* Initial State for Animations */
+.dining-section {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  
+  /* Visible State */
+  .dining-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Text Content Animation Inside the Section */
+  .text-content h1,
+  .text-content .subtitle,
+  .text-content .description {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  
+  .dining-section.visible .text-content h1 {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+  }
+  
+  .dining-section.visible .text-content .subtitle {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.4s;
+  }
+  
+  .dining-section.visible .text-content .description {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.6s;
+  }
+  
+  /* Image Gallery Animation */
+  .image-gallery .gallery-item {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  
+  .dining-section.visible .gallery-item {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* Dining Section Container */
+  .dining-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: linear-gradient(to bottom right, #ffffff, #f1f1f1);
+    animation: sectionFadeIn 1.5s ease-out;
+  }
+  
+  /* Text Content Styling */
+  .text-content {
+    flex: 1;
+    max-width: 500px;
+    margin: 20px;
+    text-align: center;
+  }
+  
+  .text-content h1 {
+    font-size: 25px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    margin-bottom: 100px;
+    color: #333;
+    animation: textFadeIn 2s ease-in;
+  }
+  
+  .text-content .subtitle {
+    font-size: 60px;
+    font-weight: 1000;
+    color: #b2905b;
+    font-family: "Tangerine", cursive;
+    margin-bottom: 20px;
+   
+    
+  }
+  
+  .text-content .description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-top:-70px;
+   
+    animation: textFadeIn 3s ease-in;
+  }
+  
+  /* Image Gallery Styling */
+  .image-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    flex: 1;
+    max-width: 500px;
+  }
+  
+  .gallery-item {
+    width: 100%;    
+  
+    
+    height:200px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 0.5s;
+    animation: imageFadeIn 1.5s ease-in;
+  }
+  
+  .gallery-item:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0.9;
+  }
+  
+  /* Keyframes for Animations */
+  @keyframes textFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes imageFadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes sectionFadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+
+  /* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+  }
+  
+  /* Culinary Section */
+  .culinary-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 15%;
+    background: #ffffff;
+    border-top: 2px solid #f1f1f1;
+    border-bottom: 2px solid #f1f1f1;
+    transition: transform 0.3s ease, opacity 0.5s ease;
+  }
+  
+  .culinary-section:hover {
+    transform: translateY(-5px);
+    opacity: 0.98;
+  }
+  
+  /* Image Wrapper */
+  .culinary-images {
+    position: relative;
+    flex: 1;
+    max-width: 50%;
+  }
+  
+  .culinary-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  
+  .main-image {
+    width:60%;
+    height: 300px;
+    border-radius: 1px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .overlay-image {
+    position: absolute;
+    top:70%;
+    left: 150px;
+    width: 50%;
+    border-radius: 1px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-50%);
+}
+  
+
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    
+    
+    .image-gallery {
+      grid-template-columns: 1fr;
+    }
+  
+    .text-content {
+      text-align: left;
+    }
+  
+    .text-content h1 {
+      font-size: 2rem;
+    }
+  
+    .text-content .subtitle {
+      font-size: 5.3rem;
+    }
+  
+    .text-content .description {
+      font-size: 1rem;
+    }
+  }
+  @media (max-width: 480px) {
+    .text-content .subtitle {
+      font-size: 2.3rem;
+    }
+  
+  }
+
+
+  
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+/* Culinary Section */
+.culinary-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 120px 15%;
+  background: #ffffff;
+  border-top: 2px solid #f1f1f1;
+  border-bottom: 2px solid #f1f1f1;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(30px); /* Start below view */
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.culinary-section.play-animation {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Image Wrapper */
+.culinary-images {
+  position: relative;
+  flex: 1;
+  max-width: 50%;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: transform 1.2s ease, opacity 1.2s ease;
+}
+
+.culinary-images.play-animation {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.culinary-image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Main Image */
+.main-image {
+  width: 70%;
+  height: 350px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  margin-bottom: -70px;
+  transform: scale(0.95);
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+.main-image.play-animation {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Overlay Image */
+.overlay-image {
+  position: absolute;
+  top: 70%;
+  left: 150px;
+  width: 60%;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: transform 1.5s ease, opacity 1.5s ease;
+}
+
+.overlay-image.play-animation {
+  opacity: 1;
+  transform: translateY(-300px);
+}
+
+/* Culinary Content */
+.culinary-content {
+  flex: 1;
+  max-width: 45%;
+  padding-left: 30px;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: transform 1.4s ease, opacity 1.4s ease;
+}
+
+.culinary-content.play-animation {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Text Styles */
+.culinary-subtitle {
+  font-size: 50px;
+  font-weight: 700;
+  color: #b2905b;
+  font-family: "Tangerine", cursive;
+  margin-bottom: 15px;
+}
+
+.culinary-title {
+  font-size: 40px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.culinary-description {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.culinary-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #d35400;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.culinary-button:hover {
+  background-color: #e67e22;
+  transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .culinary-section {
+    flex-direction: column;
+    padding: 30px 20px;
+    text-align: left;
+  }
+
+  .culinary-images {
+    max-width: 100%;
+  }
+  .overlay-image {
+    position: absolute;
+    top: 128%;
+    left: 72px;
+    width: 60%;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform 1.5s ease, opacity 1.5s ease;
+}
+
+  .culinary-content {
+    max-width: 100%;
+    padding-left: 0;
+    margin-top: 20px;
+  }
+
+  .culinary-title {
+    font-size: 2.2rem;
+  }
+  .culinary-content {
+ 
+  
+    transform: translateX(30px);
+   
+    
+  }
+}
+@media(max-width:480px){
+  .culinary-subtitle {
+    font-size: 41px;
+    font-weight: 700;
+    color: #b2905b;
+    font-family: "Tangerine", cursive;
+    margin-top: 65px;
+    margin-bottom: 21px;
+}
+.overlay-image {
+  position: absolute;
+  top: 123%;
+  left: 110px;
+  width: 60%;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: transform 1.5s ease, opacity 1.5s ease;
+}
+.culinary-content {
+ 
+  
+  transform: translateX(30px);
+ 
+  
+}
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+ 
+
+.banner-section {
+  position: relative;
+  background-image: url('images/veg\ pic.avif'); /* Replace with your new image URL */
+  background-size: cover;
+  background-position: top; /* Positioning to emphasize the top part of the image */
+  height: 100vh; /* Full height of the viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* Lighter overlay for more subtle effect */
+}
+
+.text-area {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #b2905b;
+  font-family: "Tangerine", cursive; /* Light text color for better contrast */
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(40px); /* Start further down */
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out; /* Fast transition */
+}
+
+.slide-in-title {
+  opacity: 1;
+  transform: translateY(0); /* Reset position */
+}
+
+.slide-in-tagline {
+  opacity: 1;
+  transform: translateY(0); /* Reset position */
+}
+
+
+.text-area h1{
+  color: #b2905b;
+  font-size: 60px;
+  font-weight: 700;
+  font-family: "Tangerine", cursive;
+}
+.text-area p{
+  font-size: 50px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  color: white;
+}
+@media(max-width:480px){
+  .text-area p{
+    font-size: 35px;
+  }
+}
+
+
+ 
+
+  
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+/* Culinary Section */
+.culinary-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 120px 15%;
+  background: #ffffff;
+  border-top: 2px solid #f1f1f1;
+  border-bottom: 2px solid #f1f1f1;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(30px); /* Start below view */
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.culinary-section.play-animation {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Image Wrapper */
+.culinary-images {
+  position: relative;
+  flex: 1;
+  max-width: 50%;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: transform 1.2s ease, opacity 1.2s ease;
+}
+
+.culinary-images.play-animation {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.culinary-image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Main Image */
+.main-image {
+  width: 70%;
+  height: 350px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  margin-bottom: -70px;
+  transform: scale(0.95);
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+.main-image.play-animation {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Overlay Image */
+.overlay-image {
+  position: absolute;
+  top: 70%;
+  left: 150px;
+  width: 60%;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: transform 1.5s ease, opacity 1.5s ease;
+}
+
+.overlay-image.play-animation {
+  opacity: 1;
+  transform: translateY(-300px);
+}
+
+/* Culinary Content */
+.culinary-content {
+  flex: 1;
+  max-width: 45%;
+  padding-left: 30px;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: transform 1.4s ease, opacity 1.4s ease;
+}
+
+.culinary-content.play-animation {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Text Styles */
+.culinary-subtitle {
+  font-size: 50px;
+  font-weight: 700;
+  color: #b2905b;
+  font-family: "Tangerine", cursive;
+  margin-bottom: 15px;
+}
+
+.culinary-title {
+  font-size: 40px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.culinary-description {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.culinary-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #d35400;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.culinary-button:hover {
+  background-color: #e67e22;
+  transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .culinary-section {
+    flex-direction: column;
+    padding: 30px 20px;
+    text-align: left;
+  }
+
+  .culinary-images {
+    max-width: 100%;
+  }
+  .overlay-image {
+    position: absolute;
+    top: 128%;
+    left: 72px;
+    width: 60%;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform 1.5s ease, opacity 1.5s ease;
+}
+
+  .culinary-content {
+    max-width: 100%;
+    padding-left: 0;
+    margin-top: 20px;
+  }
+
+  .culinary-title {
+    font-size: 2.2rem;
+  }
+  .culinary-content {
+ 
+  
+    transform: translateX(30px);
+   
+    
+  }
+}
+@media(max-width:480px){
+  .culinary-subtitle {
+    font-size: 41px;
+    font-weight: 700;
+    color: #b2905b;
+    font-family: "Tangerine", cursive;
+    margin-top: 65px;
+    margin-bottom: 21px;
+}
+.overlay-image {
+  position: absolute;
+  top: 123%;
+  left: 110px;
+  width: 60%;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: transform 1.5s ease, opacity 1.5s ease;
+}
+.culinary-content {
+ 
+  
+  transform: translateX(30px);
+ 
+  
+}
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.footer {
+  background: #000;
+  color: #fff;
+  padding: 30px 20px; /* Increase overall padding for a more spacious look */
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px; /* Larger gap between sections */
+  opacity: 0; /* Start hidden for fade-in animation */
+  transform: translateY(50px); /* Start below viewport */
+  animation: fadeInUp 1.2s ease-in-out forwards; /* Trigger animation */
+}
+
+.footer-section {
+  flex: 1 1 calc(25% - 40px); /* Adjusted to match the new gap */
+  min-width: 220px; /* Increased minimum width for better spacing */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+.footer-section h2,
+.footer-section h3 {
+  margin-bottom: 20px; /* Increase space below headers */
+}
+
+.footer-section p,
+.footer-section a {
+  font-size: 15px; /* Slightly larger text for readability */
+  line-height: 1.8; /* Increased line-height for better spacing */
+  color:white;
+ 
+  text-decoration: none;
+  transition: color 0.3s ease; /* Smooth text color transition */
+  margin-bottom: 10px; /* Add spacing between paragraphs and links */
+}
+
+
+.footer-section a:hover {
+  color: #fff;
+}
+.social-icon{
+  margin-left: 1px;
+}
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px; /* Larger spacing between icons */
+  color:white;
+  font-size: 20px; /* Slightly larger icon size */
+  transition: transform 0.3s ease, color 0.3s ease; /* Add hover animations */
+}
+
+.social-icons a:hover {
+  color: #d35400;
+  transform: scale(1.2); /* Enlarge on hover */
+}
+
+.footer-section form input[type="email"] {
+  padding: 12px; /* Increased padding for inputs */
+  margin-bottom: 15px; /* Add spacing below input field */
+  border: none;
+  border-radius: 5px;
+  transition: box-shadow 0.3s ease; /* Add hover focus animations */
+}
+
+.footer-section form input[type="email"]:focus {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.footer-section form button {
+  background: #444;
+  color: #fff;
+  border: none;
+  padding: 12px; /* Larger button padding */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 1.5s ease, transform 0.3s ease;
+}
+
+.footer-section form button:hover {
+  background: #fff;
+  color: #444;
+  transform: scale(1.1); /* Enlarge slightly on hover */
+}
+
+.footer-bottom {
+  margin-top: 50px; /* Increased spacing for footer-bottom area */
+  text-align: center;
+  font-size: 13px; /* Slightly larger text for readability */
+  opacity: 0; /* Start hidden */
+  animation: fadeIn 1.5s ease-in forwards; /* Add fade-in animation */
+}
+
+.footer-bottom a {
+  color: #aaa;
+  margin: 0 10px; /* Increase spacing between links */
+  transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+  color: #fff;
+}
+.footer-section p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 15px;
+  color:white;
+}
+
+.footer-section p i {
+  font-size: 18px; /* Adjust icon size */
+  color: #fff; /* Icon color */
+  margin-right: 10px; /* Space between icon and text */
+  transition: color 0.3s ease; /* Smooth hover transition */
+}
+
+.footer-section p a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section p a:hover {
+  color:#aaa; /* Change text color on hover */
+}
+
+.footer-section p:hover i {
+  color: #d35400; /* Highlight icon on hover */
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-section {
+    flex: 1 1 100%;
+  }
+  .container {
+    gap: 20px; /* Reduce gap on smaller screens */
+  }
+}
+
+
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(150, 68, 68, 0.228), transparent);
+  transform: rotate(0deg);
+  animation: rotateBackground 20s linear infinite;
+}
+
+@keyframes rotateBackground {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.banner-section {
+  position: relative;
+  background-image: url('images/veg\ pic.avif'); /* Replace with your new image URL */
+  background-size: cover;
+  background-position: top; /* Positioning to emphasize the top part of the image */
+  height: 100vh; /* Full height of the viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* Lighter overlay for more subtle effect */
+}
+
+.text-area {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #b2905b;
+  font-family: "Tangerine", cursive; /* Light text color for better contrast */
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(40px); /* Start further down */
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out; /* Fast transition */
+}
+
+.slide-in-title {
+  opacity: 1;
+  transform: translateY(0); /* Reset position */
+}
+
+.slide-in-tagline {
+  opacity: 1;
+  transform: translateY(0); /* Reset position */
+}
+
+
+.text-area h1{
+  color: #b2905b;
+  font-size: 60px;
+  font-weight: 700;
+  font-family: "Tangerine", cursive;
+}
+.text-area p{
+  font-size: 50px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  color: white;
+}
+@media(max-width:480px){
+  .text-area p{
+    font-size: 35px;
+  }
+}
+
+
+    /* Base styles for search bar */
+    .search-bar {
+        display: none; /* Hidden by default */
+        position: fixed;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 10px;
+        border-radius: 8px;
+        z-index: 1000;
+        width: 80%;
+        max-width: 500px;
+        transition: all 0.3s ease;
+    }
+
+    .search-bar.active {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .search-input {
+        flex: 1;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-right: 10px;
+    }
+
+    .search-btn {
+        padding: 10px 15px;
+        background: #d81b60; /* Button color */
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .search-btn:hover {
+        background: #2d1a6a; /* Hover color */
+    }
+
+    .search-icon i {
+        font-size: 20px;
+        color: #555;
+        transition: color 0.3s ease;
+    }
+
+    .search-icon i:hover {
+        color: #d81b60;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .search-bar {
+            width: 90%; /* Reduce width for smaller screens */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .search-input {
+            font-size: 14px; /* Smaller font for smaller screens */
+        }
+
+        .search-btn {
+            font-size: 14px;
+            padding: 8px 10px;
+        }
+    }

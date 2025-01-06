@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="classic.css">
+</head>
+<body>
+    <!-- Top Bar with Contact & Social Icons -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="contact-info">
+                <span><i class="fa-solid fa-phone"></i> +91 8247547854</span>
+                <span><i class="fa-solid fa-envelope"></i> Advoize2023@gmail.com</span>
+            </div>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">Restaurant</div>
+
+            <!-- Hamburger Icon (Only visible on small devices) -->
+            <div class="hamburger" id="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav id="nav-menu">
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="home.html">Home</a>
+                        <span class="toggle-dropdown">
+                            <i class="fa-solid fa-chevron-down indicator"></i>
+                        </span>
+                        <ul class="dropdown-menu hidden">
+                            <li><a href="home.html">Home Main</a></li>
+                            <li><a href="Home Classic.html">Home Classic</a></li>
+                            <li><a href="Home Video.html">Home Video</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="menu.html">Menu</a>
+                      <span class="toggle-dropdown">
+                        <i class="fa-solid fa-chevron-down indicator"></i>
+                    </span>
+                    <ul class="dropdown-menu hidden">
+                      <li><a href="menu.html">Non-Veg-Menu</a></li>
+                      <li><a href="Non-veg.html">Veg-Menu</a></li>
+                  </ul>
+                  </li>
+                    <li class="menu-item">
+                        <a href="reservation.html">Reservation</a>
+                        <span class="toggle-dropdown">
+                            <i class="fa-solid fa-chevron-down indicator"></i>
+                        </span>
+                        <ul class="dropdown-menu hidden">
+                            <li><a href="reservation.html">Reservation Form</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="About.html">Pages</a>
+                        <span class="toggle-dropdown">
+                            <i class="fa-solid fa-chevron-down indicator"></i>
+                        </span>
+                        <ul class="dropdown-menu hidden">
+                            <li><a href="About.html">About Us</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="services.html">Services</a></li>
+                          
+                            
+                        </ul>
+                    </li>
+                    
+                    
+                    <li class="menu-item"><a href="shop.html">Shop</a></li>
+                    <li class="menu-item"><a href="contact.html">Contact</a></li>
+                    <li class="menu-item">
+                      <a href="#" class="search-icon" onclick="toggleSearchBar()"><i class="fa-solid fa-magnifying-glass"></i></a>
+                  </li>
+                  <div id="search-bar" style="display: none;">
+                      <input type="text" placeholder="Search..." id="search-input">
+                      <button onclick="performSearch()">Search</button>
+                  </div>
+                  
+                  <script>
+                      // List of pages to search
+                      const pages = [
+                          { name: "home", url: "home.html" },
+                          { name: "home classic", url: "Home Classic.html" },
+                          { name: "home video", url: "Home Video.html" },
+                          { name: "menu", url: "menu.html" },
+                          { name: "non-veg", url: "Non-veg.html" },
+                          { name: "reservation", url: "reservation.html" },
+                          { name: "about", url: "About.html" },
+                          { name: "gallery", url: "gallery.html" },
+                          { name: "services", url: "services.html" },
+                          { name: "shop", url: "shop.html" },
+                          { name: "contact", url: "contact.html" },
+                          { name: "cart", url: "cart.html" }
+                      ];
+                  
+                      function toggleSearchBar() {
+                          const searchBar = document.getElementById("search-bar");
+                          searchBar.style.display = searchBar.style.display === "none" ? "block" : "none";
+                      }
+                  
+                      function performSearch() {
+                          const query = document.getElementById("search-input").value.toLowerCase().trim();
+                          
+                          // Search for a matching page
+                          const match = pages.find(page => page.name.includes(query));
+                          
+                          if (match) {
+                              // Redirect to the matching page
+                              window.location.href = match.url;
+                          } else {
+                              // Show an alert if no match is found
+                              alert("No matching page found. Please try again!");
+                          }
+                      }
+                  </script>
+                  
+                    <li class="menu-item">
+                        <a href="cart.html" class="bag-icon"><i class="fa-solid fa-bag-shopping"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+
+
+
+    
+    <script>
+      // Toggle mobile menu
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('nav-menu');
+
+      hamburger.addEventListener('click', () => {
+          navMenu.classList.toggle('mobile-visible');
+      });
+
+      // Toggle dropdown menus
+      const dropdownToggles = document.querySelectorAll('.toggle-dropdown');
+      dropdownToggles.forEach(toggle => {
+          toggle.addEventListener('click', () => {
+              const dropdownMenu = toggle.nextElementSibling;
+              dropdownMenu.classList.toggle('hidden');
+              const indicator = toggle.querySelector('.indicator');
+              if (indicator.classList.contains('fa-chevron-down')) {
+                  indicator.classList.remove('fa-chevron-down');
+                  indicator.classList.add('fa-chevron-up');
+              } else {
+                  indicator.classList.remove('fa-chevron-up');
+                  indicator.classList.add('fa-chevron-down');
+              }
+          });
+      });
+  </script>
+
+
+
+
+
+
+
+<section class="banner-section">
+  <div class="bg-overlay"></div>
+  <div class="text-area">
+      <h1 class="headline hidden">Veg-Menu</h1>
+      <p class="tagline hidden">Delicious Lunch Options</p>
+  </div>
+</section>
+
+
+
+ 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+   const bannerSection = document.querySelector(".banner-section");
+   const headline = bannerSection.querySelector(".headline");
+   const tagline = bannerSection.querySelector(".tagline");
+
+   const checkVisibility = () => {
+       const sectionRect = bannerSection.getBoundingClientRect();
+       if (sectionRect.top < window.innerHeight && sectionRect.bottom > 0) {
+           headline.classList.add("slide-in-title");
+           tagline.classList.add("slide-in-tagline");
+           window.removeEventListener('scroll', checkVisibility); // Stop checking once visible
+       }
+   };
+
+   window.addEventListener('scroll', checkVisibility);
+});
+</script>
+
+
+
+
+    <section class="chef-specialties">
+        <h2 class="specialty-title">
+          <span>Discover the Taste</span>
+          <br>
+          <strong>Our Chef's Signature Dishes</strong>
+        </h2>
+        <div class="specialties-columns">
+          <!-- Left Column -->
+          <div class="specialty-column">
+            <h3 class="column-title">Snacks</h3>
+            <div class="specialty-item">
+              <div class="specialty-header">
+                <span class="specialty-name">Truffle Mushroom Risotto</span>
+                <span class="specialty-badge new-highlight">NEW ₹180.00</span>
+              </div>
+              <span class="specialty-description">Creamy Arborio rice / Truffle oil / Parmesan cheese</span>
+            </div>
+            <div class="specialty-item">
+              <div class="specialty-header">
+                <span class="specialty-name">Garlic Herb Cauliflower Bites</span>
+                <span class="dish-tag recommended-dish">RECOMMENDED ₹160.50</span>
+              </div>
+              <span class="specialty-description">Roasted cauliflower / Garlic herb butter / Lemon zest</span>
+            </div>
+            <div class="specialty-item">
+              <div class="specialty-header">
+                <span class="specialty-name">Spicy Avocado Tartare</span>
+                <span class="specialty-badge">₹150.95</span>
+              </div>
+              <span class="specialty-description">Fresh avocado / Sesame dressing / Crispy wontons</span>
+            </div>
+            <div class="specialty-item">
+              <div class="specialty-header">
+                <span class="specialty-name">Mediterranean Grilled Paneer</span>
+                <span class="specialty-badge new-highlight">NEW ₹200.00</span>
+              </div>
+              <span class="specialty-description">Herb-marinated paneer / Mint yogurt / Grilled vegetables</span>
+            </div>
+            <div class="specialty-item">
+              <div class="specialty-header">
+                <span class="specialty-name">Balsamic Glazed Tofu</span>
+                <span class="specialty-badge">₹220.50</span>
+              </div>
+              <span class="specialty-description">Grilled tofu / Balsamic glaze / Cherry tomatoes</span>
+            </div>
+          </div>
+          <!-- Right Column -->
+          <div class="specialty-column">
+            <h3 class="column-title">Classics</h3>
+            <div class="specialty-item">
+              <div class="specialty-header">
+                <span class="specialty-name">Vegetarian Wellington</span>
+                <span class="specialty-badge">₹300.00</span>
+              </div>
+              <span class="specialty-description">Portobello mushrooms / Puff pastry / Spinach duxelles</span>
+            </div>
+            <div class="specialty-item">
+              <div class="specialty-header">
+                <span class="specialty-name">Smoked Eggplant Steak</span>
+                <span class="dish-tag recommended-dish">RECOMMENDED ₹210.50</span>
+              </div>
+              <span class="specialty-description">Applewood smoked eggplant / Red wine glaze / Mashed potatoes</span>
+            </div>
+            <div class="specialty-item">
+              <div class="specialty-header">
+                <span class="specialty-name">Vegetarian Paella</span>
+                <span class="specialty-badge">₹260.95</span>
+              </div>
+              <span class="specialty-description">Saffron rice / Seasonal vegetables / Bell peppers</span>
+            </div>
+            <div class="specialty-item">
+              <div class="specialty-header">
+                <span class="specialty-name">Wild Berry Cheesecake</span>
+                <span class="specialty-badge new-highlight">NEW ₹900.50</span>
+              </div>
+              <span class="specialty-description">Creamy cheesecake / Fresh berries / Graham cracker crust</span>
+            </div>
+            <div class="specialty-item">
+              <div class="specialty-header">
+                <span class="specialty-name">Charcoal Grilled Zucchini</span>
+                <span class="dish-tag recommended-dish">RECOMMENDED ₹180.50</span>
+              </div>
+              <span class="specialty-description">Grilled zucchini / Chimichurri sauce / Roasted potatoes</span>
+            </div>
+          </div>
+        </div>
+    </section>
+    
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const specialtiesSection = document.querySelector(".chef-specialties");
+  const specialtyItems = document.querySelectorAll(".specialty-item");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          specialtiesSection.classList.add("active");
+
+          specialtyItems.forEach((item, index) => {
+            setTimeout(() => {
+              item.classList.add("visible");
+            }, index * 200); // Delay for each item (200ms)
+          });
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  observer.observe(specialtiesSection);
+});
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="my-parallax">
+    <div class="my-overlay"></div>
+    <div class="my-text">
+        <h1 class="my-title hidden">Our Most Popular Menu</h1>
+        <p class="my-subtitle hidden">Lunch</p>
+    </div>
+</section>
+
+
+
+<script>
+   document.addEventListener("DOMContentLoaded", () => {
+    const parallaxSection = document.querySelector(".my-parallax");
+    const title = parallaxSection.querySelector(".my-title");
+    const subtitle = parallaxSection.querySelector(".my-subtitle");
+
+    const checkVisibility = () => {
+        const sectionRect = parallaxSection.getBoundingClientRect();
+        if (sectionRect.top < window.innerHeight && sectionRect.bottom > 0) {
+            title.classList.add("show-title");
+            subtitle.classList.add("show-subtitle");
+            window.removeEventListener('scroll', checkVisibility); // Stop checking once visible
+        }
+    };
+
+    window.addEventListener('scroll', checkVisibility);
+});
+
+</script>
+
+
+
+<section class="signature-dishes">
+    <h2 class="dishes-title">
+      <span>Experience the Flavor</span>
+      <br>
+      <strong>Chef's Signature Creations</strong>
+    </h2>
+    <div class="dishes-layout">
+      <!-- Left Column -->
+      <div class="dishes-column">
+        <h3 class="column-header">Appetizers</h3>
+        <div class="dish-item">
+          <div class="dish-header">
+            <span class="dish-name">Truffle Mushroom Risotto</span>
+            <span class="dish-tag new-dish">NEW ₹180.00</span>
+          </div>
+          <span class="dish-info">Creamy Arborio rice / Truffle oil / Parmesan cheese</span>
+        </div>
+        <div class="dish-item">
+          <div class="dish-header">
+            <span class="dish-name">Garlic Butter Prawns</span>
+            <span class="dish-tag recommended-dish">RECOMMENDED ₹250.50</span>
+          </div>
+          <span class="dish-info">Grilled prawns / Garlic butter sauce / Lemon zest</span>
+        </div>
+        <div class="dish-item">
+          <div class="dish-header">
+            <span class="dish-name">Spicy Tuna Tartare</span>
+            <span class="dish-tag">₹150.95</span>
+          </div>
+          <span class="dish-info">Fresh tuna / Avocado / Soy sesame dressing</span>
+        </div>
+        <div class="dish-item">
+          <div class="dish-header">
+            <span class="dish-name">Mediterranean Lamb Chops</span>
+            <span class="dish-tag new-dish">NEW ₹300.00</span>
+          </div>
+          <span class="dish-info">Herb-crusted lamb / Mint yogurt / Grilled vegetables</span>
+        </div>
+        <div class="dish-item">
+          <div class="dish-header">
+            <span class="dish-name">Balsamic Glazed Chicken</span>
+            <span class="dish-tag">₹220.50</span>
+          </div>
+          <span class="dish-info">Grilled chicken breast / Balsamic glaze / Cherry tomatoes</span>
+        </div>
+      </div>
+      <!-- Right Column -->
+      <div class="dishes-column">
+        <h3 class="column-header">Signature Dishes</h3>
+        <div class="dish-item">
+          <div class="dish-header">
+            <span class="dish-name">Beef Wellington</span>
+            <span class="dish-tag">₹350.00</span>
+          </div>
+          <span class="dish-info">Tenderloin steak / Puff pastry / Mushroom duxelles</span>
+        </div>
+        <div class="dish-item">
+          <div class="dish-header">
+            <span class="dish-name">Smoked Duck Breast</span>
+            <span class="dish-tag recommended-dish">RECOMMENDED ₹280.50</span>
+          </div>
+          <span class="dish-info">Applewood smoked duck / Red wine reduction / Mashed potatoes</span>
+        </div>
+        <div class="dish-item">
+          <div class="dish-header">
+            <span class="dish-name">Seafood Paella</span>
+            <span class="dish-tag">₹290.95</span>
+          </div>
+          <span class="dish-info">Saffron rice / Mixed seafood / Bell peppers</span>
+        </div>
+        <div class="dish-item">
+          <div class="dish-header">
+            <span class="dish-name">Wild Berry Cheesecake</span>
+            <span class="dish-tag new-dish">NEW ₹900.50</span>
+          </div>
+          <span class="dish-info">Creamy cheesecake / Fresh berries / Graham cracker crust</span>
+        </div>
+        <div class="dish-item">
+          <div class="dish-header">
+            <span class="dish-name">Charcoal Grilled Ribeye</span>
+            <span class="dish-tag recommended-dish">RECOMMENDED ₹250.50</span>
+          </div>
+          <span class="dish-info">Juicy ribeye / Chimichurri sauce / Roasted potatoes</span>
+        </div>
+      </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const section = document.querySelector(".signature-dishes");
+  const items = document.querySelectorAll(".dish-item");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          section.classList.add("section-visible");
+
+          items.forEach((item, index) => {
+            setTimeout(() => {
+              item.classList.add("item-visible");
+            }, index * 200);
+          });
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  observer.observe(section);
+});
+
+</script>
+
+
+
+<section class="parallax-section">
+    <div class="parallax-content">
+       
+        
+        <h1>Dinner</h1>
+        <p>We explore new horizons and unforgettable moments.</p>
+      </div>
+</section>
+ 
+<script>document.addEventListener("DOMContentLoaded", () => {
+    const parallaxSection = document.querySelector(".parallax-section");
+    const parallaxContent = document.querySelector(".parallax-content");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    parallaxContent.classList.add("visible");
+                }
+            });
+        },
+        {
+            threshold: 0.5, // Trigger when 50% of the section is visible
+        }
+    );
+
+    observer.observe(parallaxSection);
+});
+</script>
+
+
+<section class="gourmet-dishes">
+    <h2 class="gourmet-title">
+      <span>Savor the Taste</span>
+      <br>
+      <strong>Luxurious Chef Creations</strong>
+    </h2>
+    <div class="gourmet-layout">
+      <!-- Left Column -->
+      <div class="gourmet-column">
+        <h3 class="gourmet-column-header">Appetizers</h3>
+        <div class="gourmet-item">
+          <div class="gourmet-header">
+            <span class="gourmet-name">Truffle Mushroom Risotto</span>
+            <span class="gourmet-tag new-dish">NEW ₹180.00</span>
+          </div>
+          <span class="gourmet-info">Creamy Arborio rice / Truffle oil / Parmesan cheese</span>
+        </div>
+        <div class="gourmet-item">
+          <div class="gourmet-header">
+            <span class="gourmet-name">Garlic Butter Prawns</span>
+            <span class="gourmet-tag recommended-dish">RECOMMENDED ₹250.50</span>
+          </div>
+          <span class="gourmet-info">Grilled prawns / Garlic butter sauce / Lemon zest</span>
+        </div>
+        <div class="gourmet-item">
+          <div class="gourmet-header">
+            <span class="gourmet-name">Spicy Tuna Tartare</span>
+            <span class="gourmet-tag">₹150.95</span>
+          </div>
+          <span class="gourmet-info">Fresh tuna / Avocado / Soy sesame dressing</span>
+        </div>
+        <div class="gourmet-item">
+          <div class="gourmet-header">
+            <span class="gourmet-name">Mediterranean Lamb Chops</span>
+            <span class="gourmet-tag new-dish">NEW ₹300.00</span>
+          </div>
+          <span class="gourmet-info">Herb-crusted lamb / Mint yogurt / Grilled vegetables</span>
+        </div>
+        <div class="gourmet-item">
+          <div class="gourmet-header">
+            <span class="gourmet-name">Balsamic Glazed Chicken</span>
+            <span class="gourmet-tag">₹220.50</span>
+          </div>
+          <span class="gourmet-info">Grilled chicken breast / Balsamic glaze / Cherry tomatoes</span>
+        </div>
+      </div>
+      <!-- Right Column -->
+      <div class="gourmet-column">
+        <h3 class="gourmet-column-header">Signature Dishes</h3>
+        <div class="gourmet-item">
+          <div class="gourmet-header">
+            <span class="gourmet-name">Beef Wellington</span>
+            <span class="gourmet-tag">₹350.00</span>
+          </div>
+          <span class="gourmet-info">Tenderloin steak / Puff pastry / Mushroom duxelles</span>
+        </div>
+        <div class="gourmet-item">
+          <div class="gourmet-header">
+            <span class="gourmet-name">Smoked Duck Breast</span>
+            <span class="gourmet-tag recommended-dish">RECOMMENDED ₹280.50</span>
+          </div>
+          <span class="gourmet-info">Applewood smoked duck / Red wine reduction / Mashed potatoes</span>
+        </div>
+        <div class="gourmet-item">
+          <div class="gourmet-header">
+            <span class="gourmet-name">Seafood Paella</span>
+            <span class="gourmet-tag">₹290.95</span>
+          </div>
+          <span class="gourmet-info">Saffron rice / Mixed seafood / Bell peppers</span>
+        </div>
+        <div class="gourmet-item">
+          <div class="gourmet-header">
+            <span class="gourmet-name">Wild Berry Cheesecake</span>
+            <span class="gourmet-tag new-dish">NEW ₹900.50</span>
+          </div>
+          <span class="gourmet-info">Creamy cheesecake / Fresh berries / Graham cracker crust</span>
+        </div>
+        <div class="gourmet-item">
+          <div class="gourmet-header">
+            <span class="gourmet-name">Charcoal Grilled Ribeye</span>
+            <span class="gourmet-tag">₹400.00</span>
+          </div>
+          <span class="gourmet-info">Juicy ribeye / Chimichurri sauce / Roasted potatoes</span>
+        </div>
+      </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const section = document.querySelector(".gourmet-dishes");
+  const items = document.querySelectorAll(".gourmet-item");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          section.classList.add("section-visible");
+
+          items.forEach((item, index) => {
+            setTimeout(() => {
+              item.classList.add("item-visible");
+            }, index * 200);
+          });
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  observer.observe(section);
+});
+
+</script>
+
+
+
+
+<section class="hero-area">
+    <div class="background-overlay"></div>
+    <div class="text-wrapper">
+        <h1 class="primary-title hidden">Drinks</h1>
+        <p class="secondary-title hidden">Taste the world’s best drink, brought right to your table</p>
+    </div>
+</section> 
+
+
+<script>
+ // Wait for the DOM to be fully loaded
+document.addEventListener("DOMContentLoaded", function() {
+    // Select the main heading and subheading elements
+    const mainHeading = document.querySelector('.primary-title');
+    const subHeading = document.querySelector('.secondary-title');
+
+    // Add a delay to reveal the headings
+    setTimeout(() => {
+        // Remove the 'hidden' class to reveal the headings
+        mainHeading.classList.remove('hidden');
+        subHeading.classList.remove('hidden');
+        
+        // Add reveal classes to trigger animations
+        mainHeading.classList.add('show-title');
+        subHeading.classList.add('show-subtitle');
+    }, 500); // Adjust the delay time (in milliseconds) as needed
+});
+
+</script>
+
+
+
+<section class="culinary-experience">
+    <h2 class="headline">
+      <span>Indulge in Culinary Art</span>
+      <br>
+      <strong>Exquisite Dishes from Our Master Chef</strong>
+    </h2>
+    <div class="dish-sections">
+      <!-- Left Section -->
+      <div class="dish-group">
+        <h3 class="category-title">Small Bites</h3>
+        <div class="item-entry">
+          <div class="entry-header">
+            <span class="dish-title">Truffle Mushroom Risotto</span>
+            <span class="price-tag new-item">NEW $180.00</span>
+          </div>
+          <span class="item-description">Creamy Arborio rice / Truffle oil / Parmesan cheese</span>
+        </div>
+        <div class="item-entry">
+          <div class="entry-header">
+            <span class="dish-title">Garlic Butter Prawns</span>
+            <span class="price-tag recommended-item">RECOMMENDED $250.50</span>
+          </div>
+          <span class="item-description">Grilled prawns / Garlic butter sauce / Lemon zest</span>
+        </div>
+        <div class="item-entry">
+          <div class="entry-header">
+            <span class="dish-title">Spicy Tuna Tartare</span>
+            <span class="price-tag">$150.95</span>
+          </div>
+          <span class="item-description">Fresh tuna / Avocado / Soy sesame dressing</span>
+        </div>
+        <div class="item-entry">
+          <div class="entry-header">
+            <span class="dish-title">Mediterranean Lamb Chops</span>
+            <span class="price-tag new-item">NEW $300.00</span>
+          </div>
+          <span class="item-description">Herb-crusted lamb / Mint yogurt / Grilled vegetables</span>
+        </div>
+        <div class="item-entry">
+          <div class="entry-header">
+            <span class="dish-title">Balsamic Glazed Chicken</span>
+            <span class="price-tag">$220.50</span>
+          </div>
+          <span class="item-description">Grilled chicken breast / Balsamic glaze / Cherry tomatoes</span>
+        </div>
+      </div>
+      <!-- Right Section -->
+      <div class="dish-group">
+        <h3 class="category-title">Main Course</h3>
+        <div class="item-entry">
+          <div class="entry-header">
+            <span class="dish-title">Beef Wellington</span>
+            <span class="price-tag">$350.00</span>
+          </div>
+          <span class="item-description">Tenderloin steak / Puff pastry / Mushroom duxelles</span>
+        </div>
+        <div class="item-entry">
+          <div class="entry-header">
+            <span class="dish-title">Smoked Duck Breast</span>
+            <span class="price-tag recommended-item">RECOMMENDED $280.50</span>
+          </div>
+          <span class="item-description">Applewood smoked duck / Red wine reduction / Mashed potatoes</span>
+        </div>
+        <div class="item-entry">
+          <div class="entry-header">
+            <span class="dish-title">Seafood Paella</span>
+            <span class="price-tag">$290.95</span>
+          </div>
+          <span class="item-description">Saffron rice / Mixed seafood / Bell peppers</span>
+        </div>
+        <div class="item-entry">
+          <div class="entry-header">
+            <span class="dish-title">Wild Berry Cheesecake</span>
+            <span class="price-tag new-item">NEW $900.50</span>
+          </div>
+          <span class="item-description">Creamy cheesecake / Fresh berries / Graham cracker crust</span>
+        </div>
+        <div class="item-entry">
+          <div class="entry-header">
+            <span class="dish-title">Charcoal Grilled Ribeye</span>
+            <span class="price-tag">$400.00</span>
+          </div>
+          <span class="item-description">Juicy ribeye / Chimichurri sauce / Roasted potatoes</span>
+        </div>
+      </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const culinarySection = document.querySelector(".culinary-experience");
+  const allItems = document.querySelectorAll(".item-entry");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          culinarySection.classList.add("active");
+
+          allItems.forEach((item, index) => {
+            setTimeout(() => {
+              item.classList.add("visible");
+            }, index * 200);
+          });
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  observer.observe(culinarySection);
+});
+
+</script>
+
+  
+<footer class="footer">
+  <div class="container">
+    <div class="footer-section">
+      <h2>Restaurant</h2>
+      <p>"A genuine fine-dining experience awaits. Come for a drink, stay for a meal. Great food and great company. Nothing brings people together like good food."</p>
+      <div class="social-icons">
+        <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#" class="social-icon"><i class="fa-brands fa-pinterest"></i></a>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h3>Working Hours</h3>
+      <p>Monday - Friday: 11 am - 11 pm</p>
+      <p>Saturday: 10 am - 11 pm</p>
+      <p>Sunday: 10 am - 11 pm</p>
+      <p><strong>* Happy Hour: 12:00 - 4:00 *</strong></p>
+    </div>
+    <div class="footer-section">
+      <h3>Our Address</h3>
+      <p>PRAJAY PRINCETON TOWERS, #502, 5th Floor, Hyderabad, Telangana-500035</p>
+      <p><i class="fa fa-phone"></i> <span> +91 8247547854</span></p>
+      <p><i class="fa fa-envelope"></i> <a href="Advoize2023@gmail.com">Advoize2023@gmail.com</a></p>
+    </div>
+    <div class="footer-section">
+      <h3>Newsletter</h3>
+      <p>Receive the latest news from us.</p>
+      <form>
+        <input type="email" placeholder="Your Email Address" required>
+        <button type="submit">Subscribe</button>
+        <div>
+          <input type="checkbox" id="privacy" required>
+          <label for="privacy">I agree to the Privacy Policy</label>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 Advoize, All Rights Reserved</p>
+
+    
+  </div>
+</footer>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="classic.css">
+    <link rel="stylesheet" href="about.css">
+
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="reservation.css">
+</head>
+<body>
+    <!-- Top Bar with Contact & Social Icons -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="contact-info">
+                <span><i class="fa-solid fa-phone"></i> +91 8247547854</span>
+                <span><i class="fa-solid fa-envelope"></i> Advoize2023@gmail.com</span>
+            </div>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">Restaurant</div>
+
+            <!-- Hamburger Icon (Only visible on small devices) -->
+            <div class="hamburger" id="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav id="nav-menu">
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="home.html">Home</a>
+                        <span class="toggle-dropdown">
+                            <i class="fa-solid fa-chevron-down indicator"></i>
+                        </span>
+                        <ul class="dropdown-menu hidden">
+                            <li><a href="home.html">Home Main</a></li>
+                            <li><a href="Home Classic.html">Home Classic</a></li>
+                            <li><a href="Home Video.html">Home Video</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="menu-item"><a href="menu.html">Menu</a>
+                      <span class="toggle-dropdown">
+                        <i class="fa-solid fa-chevron-down indicator"></i>
+                    </span>
+                    <ul class="dropdown-menu hidden">
+                      <li><a href="menu.html">Non-Veg-Menu</a></li>
+                      <li><a href="Non-veg.html">Veg-Menu</a></li>
+                  </ul>
+                  </li>
+                    <li class="menu-item">
+                        <a href="reservation.html">Reservation</a>
+                        <span class="toggle-dropdown">
+                            <i class="fa-solid fa-chevron-down indicator"></i>
+                        </span>
+                        <ul class="dropdown-menu hidden">
+                            <li><a href="reservation.html">Reservation Form</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="About.html">Pages</a>
+                        <span class="toggle-dropdown">
+                            <i class="fa-solid fa-chevron-down indicator"></i>
+                        </span>
+                        <ul class="dropdown-menu hidden">
+                            <li><a href="About.html">About Us</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="services.html">Services</a></li>
+                          
+                            
+                        </ul>
+                    </li>
+                    
+                    
+                    <li class="menu-item"><a href="shop.html">Shop</a></li>
+                    <li class="menu-item"><a href="contact.html">Contact</a></li>
+                    <li class="menu-item">
+                      <a href="#" class="search-icon" onclick="toggleSearchBar()"><i class="fa-solid fa-magnifying-glass"></i></a>
+                  </li>
+                  <div id="search-bar" style="display: none;">
+                      <input type="text" placeholder="Search..." id="search-input">
+                      <button onclick="performSearch()">Search</button>
+                  </div>
+                  
+                  <script>
+                      // List of pages to search
+                      const pages = [
+                          { name: "home", url: "home.html" },
+                          { name: "home classic", url: "Home Classic.html" },
+                          { name: "home video", url: "Home Video.html" },
+                          { name: "menu", url: "menu.html" },
+                          { name: "non-veg", url: "Non-veg.html" },
+                          { name: "reservation", url: "reservation.html" },
+                          { name: "about", url: "About.html" },
+                          { name: "gallery", url: "gallery.html" },
+                          { name: "services", url: "services.html" },
+                          { name: "shop", url: "shop.html" },
+                          { name: "contact", url: "contact.html" },
+                          { name: "cart", url: "cart.html" }
+                      ];
+                  
+                      function toggleSearchBar() {
+                          const searchBar = document.getElementById("search-bar");
+                          searchBar.style.display = searchBar.style.display === "none" ? "block" : "none";
+                      }
+                  
+                      function performSearch() {
+                          const query = document.getElementById("search-input").value.toLowerCase().trim();
+                          
+                          // Search for a matching page
+                          const match = pages.find(page => page.name.includes(query));
+                          
+                          if (match) {
+                              // Redirect to the matching page
+                              window.location.href = match.url;
+                          } else {
+                              // Show an alert if no match is found
+                              alert("No matching page found. Please try again!");
+                          }
+                      }
+                  </script>
+                  
+                    <li class="menu-item">
+                        <a href="cart.html" class="bag-icon"><i class="fa-solid fa-bag-shopping"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    
+    
+    <script>
+        // Toggle mobile menu
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('mobile-visible');
+        });
+
+        // Toggle dropdown menus
+        const dropdownToggles = document.querySelectorAll('.toggle-dropdown');
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const dropdownMenu = toggle.nextElementSibling;
+                dropdownMenu.classList.toggle('hidden');
+                const indicator = toggle.querySelector('.indicator');
+                if (indicator.classList.contains('fa-chevron-down')) {
+                    indicator.classList.remove('fa-chevron-down');
+                    indicator.classList.add('fa-chevron-up');
+                } else {
+                    indicator.classList.remove('fa-chevron-up');
+                    indicator.classList.add('fa-chevron-down');
+                }
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+<section class="parallax-section">
+    <div class="parallax-content">
+       
+        
+        
+        <p>You should be treated as the king you aspire to be.</p>
+        <h1>Services</h1>
+        <a href="services.html" class="learn-more-btn">Learn More</a>
+    </div>
+</section>
+
+<script>document.addEventListener("DOMContentLoaded", () => {
+const parallaxSection = document.querySelector(".parallax-section");
+const parallaxContent = document.querySelector(".parallax-content");
+
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                parallaxContent.classList.add("visible");
+            }
+        });
+    },
+    {
+        threshold: 0.5, // Trigger when 50% of the section is visible
+    }
+);
+
+observer.observe(parallaxSection);
+});
+</script>
+
+
+
+
+
+<div class="section-header">
+    <p class="subtitle">Chef's Culinary Highlights</p>
+    <h2 class="title">Our Special Services</h2>
+    <div class="header-decoration">
+      <img src="./images/heading-var-shap.webp" alt="Section Decoration">
+    </div>
+  
+  
+  <section class="gallery-section">
+    <div class="gallery-grid">
+      <div class="card">
+        <div class="card-image">
+        <a href="shop.html"> <img src="./images/image 1.jpg" alt="Tuna Roast Source"></a>
+        </div>
+        <div class="card-content">
+          <h3 class="dish-title">Tuna Roast Source</h3>
+          <p class="dish-info">Tuna / Potatoes / Rice</p>
+          <div class="dish-meta">
+          <a href="shop.html">  <span class="highlight">RECOMMENDED</span></a>
+          </div>
+        </div>
+      </div>
+  
+      <div class="card">
+        <div class="card-image">
+         <a href="shop.html"> <img src="./images/image 1.jpg" alt="Roast Pork (4 Sticks)"></a>
+        </div>
+        <div class="card-content">
+          <h3 class="dish-title">Roast Pork (4 Sticks)</h3>
+          <p class="dish-info">Pork / Veggies / Shoyu</p>
+        <a href="shop.html"> <span class="highlight">RECOMMENDED</span></a>
+        </div>
+      </div>
+  
+      <div class="card">
+        <div class="card-image">
+       <a href="shop.html"><img src="./images/image 1.jpg" alt="Salted Fried Chicken"></a>
+        </div>
+        <div class="card-content">
+          <h3 class="dish-title">Salted Fried Chicken</h3>
+          <p class="dish-info">Chicken / Olive Oil / Salt</p>
+          <a href="shop.html"> <span class="highlight">RECOMMENDED</span></a>
+        </div>
+      </div>
+  </div>
+  </section>
+  </div>
+
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const sectionHeader = document.querySelector(".section-header");
+    const gallerySection = document.querySelector(".gallery-section");
+    const cards = document.querySelectorAll(".card");
+
+    const observerOptions = {
+        root: null, // Viewport
+        threshold: 0.2 // Trigger when 20% of the element is visible
+    };
+
+    const observerCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("in-view");
+                observer.unobserve(entry.target); // Stop observing once animation has triggered
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe the section hader and gallery section
+    observer.observe(sectionHeader);
+    observer.observe(gallerySection);
+
+    // Observe each card for staggered animations
+    cards.forEach(card => observer.observe(card));
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+<section class="services">
+    <h2>What we offer</h2>
+    <h3>Our Great Services</h3>
+    <div class="service-container">
+      <div class="service-box">
+       <a href="reservation.html"> <i class="fas fa-calendar-alt"></i> </a><!-- Calendar icon -->
+        <h4>Opened 24/7</h4>
+        <p>Rodich Restaurants is open 24/7 to satisfy all of our valuable customers!</p>
+      </div>
+      <div class="service-box">
+      <a href="reservation.html" ><i class="fas fa-utensils"></i> </a><!-- Utensils icon -->
+        <h4>Special Menus</h4>
+        <p>Ask for our daily specials, including the vegetarian dish of the day.</p>
+      </div>
+      <div class="service-box">
+       <a href="reservation.html"> <i class="fas fa-bicycle"></i> </a><!-- Bicycle icon -->
+        <h4>Home Delivery</h4>
+        <p>Everyday essentials delivered on time with a schedule you set.</p>
+      </div>
+    </div>
+  </section>
+  
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const servicesSection = document.querySelector(".services");
+  const serviceBoxes = document.querySelectorAll(".service-box");
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Add 'fade-in' class to all service boxes once the services section is visible
+          serviceBoxes.forEach((box, index) => {
+            setTimeout(() => {
+              box.classList.add("fade-in");
+            }, index * 200); // Delay each box's animation for a staggered effect
+          });
+
+          // Stop observing after the animation is triggered
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 } // Trigger when 50% of the section is visible
+  );
+
+  // Add the 'hidden' class initially to all service boxes
+  serviceBoxes.forEach((box) => box.classList.add("hidden"));
+
+  // Observe the services section
+  observer.observe(servicesSection);
+});
+
+</script>
+
+
+
+
+
+
+<section class="hero-area">
+    <div class="background-overlay"></div>
+    <div class="text-wrapper">
+        <h1 class="primary-title hidden">with Care and Passion.</h1>
+        <p class="secondary-title hidden">Serving You with Kindness and Genuine Care</p>
+    </div>
+</section> 
+
+
+<script>
+ // Wait for the DOM to be fully loaded
+document.addEventListener("DOMContentLoaded", function() {
+    // Select the main heading and subheading elements
+    const mainHeading = document.querySelector('.primary-title');
+    const subHeading = document.querySelector('.secondary-title');
+
+    // Add a delay to reveal the headings
+    setTimeout(() => {
+        // Remove the 'hidden' class to reveal the headings
+        mainHeading.classList.remove('hidden');
+        subHeading.classList.remove('hidden');
+        
+        // Add reveal classes to trigger animations
+        mainHeading.classList.add('show-title');
+        subHeading.classList.add('show-subtitle');
+    }, 500); // Adjust the delay time (in milliseconds) as needed
+});
+
+</script>
+
+
+
+
+
+
+<section class="services">
+    <h2>What we offer</h2>
+    <h3>Our Great Services</h3>
+</section>
+<section class="services-section">
+  <div class="service">
+     <a href="shop.html"> <i class="icon">&#127860;</i></a>
+      <h3>Fresh Produce</h3>
+      <p>We source the freshest ingredients straight from farms to ensure the best quality in every bite.</p>
+  </div>
+  <div class="service">
+     <a href="shop.html"> <i class="icon">&#127826;</i></a>
+      <h3>Authentic Recipes</h3>
+      <p>Our recipes are inspired by global cuisines, crafted with a touch of authenticity and care.</p>
+  </div>
+  <div class="service">
+    <a href="shop.html">  <i class="icon">&#127864;</i></a>
+      <h3>Signature Beverages</h3>
+      <p>Enjoy handcrafted drinks that are both refreshing and uniquely flavorful.</p>
+  </div>
+  <div class="service">
+    <a href="shop.html">  <i class="icon">&#128719;</i></a>
+      <h3>Customized Catering</h3>
+      <p>From small gatherings to large celebrations, we tailor our menu to suit your needs.</p>
+  </div>
+  <div class="service">
+    <a href="shop.html">  <i class="icon">&#129385;</i></a>
+      <h3>Online Reservations</h3>
+      <p>Skip the wait and book your table online with ease through our user-friendly system.</p>
+  </div>
+  <div class="service">
+     <a href="shop.html"> <i class="icon">&#129472;</i></a>
+      <h3>Exclusive Offers</h3>
+      <p>Take advantage of seasonal discounts and special deals for an unforgettable experience.</p>
+  </div>
+  <div class="service">
+     <a href="shop.html"> <i class="icon">&#127867;</i></a>
+      <h3>Private Dining</h3>
+      <p>Host intimate dinners in a cozy setting with personalized service and a curated menu.</p>
+  </div>
+  <div class="service">
+      <a href="shop.html" ><i class="icon">&#127858;</i></a>
+      <h3>Eco-Friendly Packaging</h3>
+      <p>We care for the planet by using biodegradable and eco-friendly packaging for deliveries.</p>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const servicesSection = document.querySelector('.services-section');
+  const services = document.querySelectorAll('.service');
+
+  // Initially set the section and services as hidden
+  servicesSection.classList.add('hidden');
+  services.forEach(service => service.classList.add('hidden-service'));
+
+  const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              // Remove the hidden class from the section
+              servicesSection.classList.remove('hidden');
+
+              // Add visible class to each service for animation
+              services.forEach((service, index) => {
+                  setTimeout(() => {
+                      service.classList.remove('hidden-service');
+                      service.classList.add('visible-service');
+                  }, index * 100); // Stagger the animations
+              });
+
+              // Stop observing once the section is visible
+              observer.unobserve(servicesSection);
+          }
+      });
+  }, { threshold: 0.1 }); // Trigger when 10% of the section is in view
+
+  // Start observing the services section
+  observer.observe(servicesSection);
+});
+</script>
+
+<section class="banner-area">
+  <div class="dark-overlay"></div>
+  <div class="content-wrapper">
+      <h1 class="headline hidden">We deliver on correct time</h1>
+      <p class="sub-text hidden">Taste the world’s best food, brought right to your table</p>
+  </div>
+</section>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+       const bannerArea = document.querySelector(".banner-area");
+       const headline = bannerArea.querySelector(".headline");
+       const subText = bannerArea.querySelector(".sub-text");
+
+       const checkVisibility = () => {
+           const sectionRect = bannerArea.getBoundingClientRect();
+           if (sectionRect.top < window.innerHeight && sectionRect.bottom > 0) {
+               headline.classList.add("display-headline");
+               subText.classList.add("display-subtext");
+               window.removeEventListener('scroll', checkVisibility); // Stop checking once visible
+           }
+       };
+
+       window.addEventListener('scroll', checkVisibility);
+   });
+</script>
+
+
+
+
+
+
+
+
+  
+<footer class="footer">
+  <div class="container">
+    <div class="footer-section">
+      <h2>Restaurant</h2>
+      <p>"A genuine fine-dining experience awaits. Come for a drink, stay for a meal. Great food and great company. Nothing brings people together like good food."</p>
+      <div class="social-icons">
+        <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#" class="social-icon"><i class="fa-brands fa-pinterest"></i></a>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h3>Working Hours</h3>
+      <p>Monday - Friday: 11 am - 11 pm</p>
+      <p>Saturday: 10 am - 11 pm</p>
+      <p>Sunday: 10 am - 11 pm</p>
+      <p><strong>* Happy Hour: 12:00 - 4:00 *</strong></p>
+    </div>
+    <div class="footer-section">
+      <h3>Our Address</h3>
+      <p>PRAJAY PRINCETON TOWERS, #502, 5th Floor, Hyderabad, Telangana-500035</p>
+      <p><i class="fa fa-phone"></i> <span> +91 8247547854</span></p>
+      <p><i class="fa fa-envelope"></i> <a href="Advoize2023@gmail.com">Advoize2023@gmail.com</a></p>
+    </div>
+    <div class="footer-section">
+      <h3>Newsletter</h3>
+      <p>Receive the latest news from us.</p>
+      <form>
+        <input type="email" placeholder="Your Email Address" required>
+        <button type="submit">Subscribe</button>
+        <div>
+          <input type="checkbox" id="privacy" required>
+          <label for="privacy">I agree to the Privacy Policy</label>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 Advoize, All Rights Reserved</p>
+   
+    
+  </div>
+</footer>
+
+
+
+
+
+
+
+</body>
+</html>

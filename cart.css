@@ -1,0 +1,144 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+  }
+
+  .cart-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .cart-title {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: left;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .cart-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .cart-table thead {
+    background: #f2f2f2;
+    text-align: left;
+  }
+
+  .cart-table th, .cart-table td {
+    padding: 12px;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .cart-table th {
+    font-weight: bold;
+    color: #333;
+  }
+
+  .cart-table img {
+    width: 70px;
+    height: 70px;
+    border-radius: 4px;
+  }
+
+  .cart-table .remove-btn {
+    color: #d81b60;
+    font-size: 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+
+  .cart-table .remove-btn:hover {
+    color: #9b1349;
+  }
+
+  .cart-total {
+    text-align: right;
+    margin-top: 20px;
+  }
+
+  .total-label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .total-amount {
+    font-size: 18px;
+    font-weight: bold;
+    color: #d81b60;
+    margin-left: 10px;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .cart-container {
+      padding: 10px;
+    }
+
+    .cart-title {
+      font-size: 24px;
+      text-align: center;
+    }
+
+    .cart-table th, .cart-table td {
+      font-size: 14px;
+      padding: 8px;
+    }
+
+    .cart-table img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .cart-total {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .total-label, .total-amount {
+      font-size: 16px;
+    }
+
+    .cart-table {
+      display: block;
+      overflow-x: auto;
+    }
+
+    .cart-table table {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cart-title {
+      font-size: 20px;
+    }
+
+    .cart-table th, .cart-table td {
+      font-size: 12px;
+      padding: 6px;
+    }
+
+    .cart-table img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .cart-total {
+      font-size: 14px;
+    }
+
+    .total-label, .total-amount {
+      font-size: 14px;
+    }
+  }

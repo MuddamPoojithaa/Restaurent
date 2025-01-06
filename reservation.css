@@ -1,0 +1,559 @@
+/* Container Styling */
+.reservation-section {
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    background-color: #fff;
+    overflow: hidden; /* For animations */
+  }
+  
+  /* Text and Form Container */
+  .reservation-container {
+    flex: 1;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInLeft 1.5s forwards ease-in-out;
+  }
+  
+  /* Title Styling */
+  h2 {
+    font-size: 35px;
+    margin-bottom: 10px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInDown 1s forwards ease-in-out 0.5s;
+  }
+  
+  /* Paragraph Styling */
+  p {
+    font-size: 17px;
+    margin-bottom: 20px;
+    font-family: "Cabin", Arial, sans-serif;
+    line-height: 2;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInDown 1s forwards ease-in-out 0.8s;
+  }
+  
+  /* Form Styling */
+  .reservation-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    opacity: 0;
+    transform: scale(0.95);
+    animation: zoomIn 1s forwards ease-in-out 1s;
+  }
+  
+  .form-group {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: "Cabin", Arial, sans-serif;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  input:focus,
+  textarea:focus {
+    border-color: goldenrod;
+    box-shadow: 0 0 8px rgba(218, 165, 32, 0.6);
+    animation: shake 0.4s ease-in-out;
+  }
+  
+  /* Textarea Styling */
+  textarea {
+    height: 80px;
+    resize: none;
+  }
+  
+  /* Button Styling */
+  button {
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards ease-in-out 1.5s;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: goldenrod;
+    transform: scale(1.1);
+  }
+  
+  /* Chef Image */
+  .chef-image {
+    flex: 1;
+    text-align: center;
+    opacity: 0;
+    transform: translateX(50px) scale(0.9);
+    animation: slideInRight 1.5s forwards ease-in-out;
+  }
+  
+  .chef-image img {
+    max-width: 100%;
+    height: auto;
+    padding-left: 40px;
+    animation: pulse 2s ;
+  }
+  
+  /* Animations */
+  
+  /* Slide in from the left */
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Slide in from the right */
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px) scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+  }
+  
+  /* Fade in from above */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Fade in from below */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Zoom in effect */
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Pulse effect for the chef image */
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  
+  /* Shake effect for input focus */
+  @keyframes shake {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    25%, 75% {
+      transform: translateX(-5px);
+    }
+    50% {
+      transform: translateX(5px);
+    }
+  }
+
+
+  /* Container Styling */
+.reservation-section {
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    background-color: #fff;
+    overflow: hidden; /* For animations */
+  }
+  
+  /* Text and Form Container */
+  .reservation-container {
+    flex: 1;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInLeft 1.5s forwards ease-in-out;
+  }
+  
+  /* Title Styling */
+  h2 {
+    font-size: 35px;
+    margin-bottom: 10px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInDown 1s forwards ease-in-out 0.5s;
+  }
+  
+  /* Paragraph Styling */
+  p {
+    font-size: 17px;
+    margin-bottom: 20px;
+    font-family: "Cabin", Arial, sans-serif;
+    line-height: 2;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInDown 1s forwards ease-in-out 0.8s;
+  }
+  
+  /* Form Styling */
+  .reservation-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    opacity: 0;
+    transform: scale(0.95);
+    animation: zoomIn 1s forwards ease-in-out 1s;
+  }
+  
+  .form-group {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: "Cabin", Arial, sans-serif;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  input:focus,
+  textarea:focus {
+    border-color: goldenrod;
+    box-shadow: 0 0 8px rgba(218, 165, 32, 0.6);
+    animation: shake 0.4s ease-in-out;
+  }
+  
+  /* Textarea Styling */
+  textarea {
+    height: 80px;
+    resize: none;
+  }
+  
+  /* Button Styling */
+  button {
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards ease-in-out 1.5s;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: goldenrod;
+    transform: scale(1.1);
+  }
+  
+  /* Chef Image */
+  .chef-image {
+    flex: 1;
+    text-align: center;
+    opacity: 0;
+    transform: translateX(50px) scale(0.9);
+    animation: slideInRight 1.5s forwards ease-in-out;
+  }
+  
+  .chef-image img {
+    max-width: 100%;
+    height: auto;
+    padding-left: 40px;
+    animation: pulse 2s ;
+  }
+  
+  /* Animations */
+  
+  /* Slide in from the left */
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Slide in from the right */
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px) scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+  }
+  
+  /* Fade in from above */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Fade in from below */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Zoom in effect */
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Pulse effect for the chef image */
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  
+  /* Shake effect for input focus */
+  @keyframes shake {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    25%, 75% {
+      transform: translateX(-5px);
+    }
+    50% {
+      transform: translateX(5px);
+    }
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .reservation-section {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .reservation-container,
+    .chef-image {
+      flex: none;
+      transform: translateX(0); /* Reset for mobile */
+      opacity: 1; /* Ensure visibility */
+      animation: none; /* Disable animations for smaller screens */
+    }
+  
+    .chef-image img {
+      padding-left: 0;
+    }
+  
+    button {
+      width: 100%;
+    }
+  }
+  
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .reservation-section {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .reservation-container,
+    .chef-image {
+      flex: none;
+      transform: translateX(0); /* Reset for mobile */
+      opacity: 1; /* Ensure visibility */
+      animation: none; /* Disable animations for smaller screens */
+    }
+  
+    .chef-image img {
+      padding-left: 0;
+    }
+  
+    button {
+      width: 100%;
+    }
+  }
+
+  
+/* General Styles */
+.services {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .services h2 {
+    font-size: 50px;
+    color: #b2905b;
+    font-family: "Tangerine", cursive;
+    margin-bottom: -5px;
+    font-weight: 600;
+  }
+  
+  .services h3 {
+    font-size: 32px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  
+  .service-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  /* Service Box Styles */
+  .service-box {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    max-width: 300px;
+    flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .service-box:hover {
+    transform: translateY(-10px); /* Slight upward motion */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+  }
+  
+  .service-box i {
+    font-size: 40px;
+    color:black;
+    margin-bottom: 15px;
+    display: inline-block;
+    transition: color 0.3s ease; /* Smooth color change on hover */
+  }
+  
+  .service-box:hover i {
+    color: #b29257; /* Change icon color on hover */
+  }
+  
+  .service-box h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .service-box p {
+    font-size: 14px;
+    color: #555;
+  }
+  /* Initially hide service boxes */
+.hidden {
+    opacity: 1;
+    transform: translateY(20px);
+  }
+  
+  /* Fade-in animation when triggered */
+  .service-box.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .service-container {
+      flex-direction: column; /* Stack boxes vertically on smaller screens */
+    }
+  
+    .service-box {
+      max-width: 100%; /* Full width for smaller screens */
+      margin-bottom: 20px; /* Add space between boxes */
+    }
+  }
+  
+  /* Animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .service-box {
+    animation: fadeInUp 0.8s ease; /* Fade-in animation */
+  }
+  

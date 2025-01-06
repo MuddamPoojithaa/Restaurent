@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Bar with Contact & Social Icons -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="contact-info">
+                <span><i class="fa-solid fa-phone"></i> +91 8247547854</span>
+                <span><i class="fa-solid fa-envelope"></i> Advoize2023@gmail.com</span>
+            </div>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">Restaurant</div>
+
+            <!-- Hamburger Icon (Only visible on small devices) -->
+            <div class="hamburger" id="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav id="nav-menu">
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="home.html">Home</a>
+                        <span class="toggle-dropdown">
+                            <i class="fa-solid fa-chevron-down indicator"></i>
+                        </span>
+                        <ul class="dropdown-menu hidden">
+                            <li><a href="home.html">Home Main</a></li>
+                            <li><a href="Home Classic.html">Home Classic</a></li>
+                            <li><a href="Home Video.html">Home Video</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="menu-item"><a href="menu.html">Menu</a>
+                      <span class="toggle-dropdown">
+                        <i class="fa-solid fa-chevron-down indicator"></i>
+                    </span>
+                    <ul class="dropdown-menu hidden">
+                      <li><a href="menu.html">Non-Veg-Menu</a></li>
+                      <li><a href="Non-veg.html">Veg-Menu</a></li>
+                  </ul>
+                  </li>
+                    <li class="menu-item">
+                        <a href="reservation.html">Make Reservation</a>
+                        <span class="toggle-dropdown">
+                            <i class="fa-solid fa-chevron-down indicator"></i>
+                        </span>
+                        <ul class="dropdown-menu hidden">
+                            <li><a href="reservation.html">Reserve Your Seat</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="About.html">Pages</a>
+                        <span class="toggle-dropdown">
+                            <i class="fa-solid fa-chevron-down indicator"></i>
+                        </span>
+                        <ul class="dropdown-menu hidden">
+                            <li><a href="About.html">About Us</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="services.html">Services</a></li>
+                          
+                            
+                        </ul>
+                    </li>
+                    
+                    
+                    <li class="menu-item"><a href="shop.html">Shop</a></li>
+                    <li class="menu-item"><a href="contact.html">Contact</a></li>
+                    <li class="menu-item">
+                      <a href="#" class="search-icon" onclick="toggleSearchBar()"><i class="fa-solid fa-magnifying-glass"></i></a>
+                  </li>
+                  <div id="search-bar" style="display: none;">
+                      <input type="text" placeholder="Search..." id="search-input">
+                      <button onclick="performSearch()">Search</button>
+                  </div>
+                  
+                  <script>
+                      // List of pages to search
+                      const pages = [
+                          { name: "home", url: "home.html" },
+                          { name: "home classic", url: "Home Classic.html" },
+                          { name: "home video", url: "Home Video.html" },
+                          { name: "menu", url: "menu.html" },
+                          { name: "non-veg", url: "Non-veg.html" },
+                          { name: "reservation", url: "reservation.html" },
+                          { name: "about", url: "About.html" },
+                          { name: "gallery", url: "gallery.html" },
+                          { name: "services", url: "services.html" },
+                          { name: "shop", url: "shop.html" },
+                          { name: "contact", url: "contact.html" },
+                          { name: "cart", url: "cart.html" }
+                      ];
+                  
+                      function toggleSearchBar() {
+                          const searchBar = document.getElementById("search-bar");
+                          searchBar.style.display = searchBar.style.display === "none" ? "block" : "none";
+                      }
+                  
+                      function performSearch() {
+                          const query = document.getElementById("search-input").value.toLowerCase().trim();
+                          
+                          // Search for a matching page
+                          const match = pages.find(page => page.name.includes(query));
+                          
+                          if (match) {
+                              // Redirect to the matching page
+                              window.location.href = match.url;
+                          } else {
+                              // Show an alert if no match is found
+                              alert("No matching page found. Please try again!");
+                          }
+                      }
+                  </script>
+                  
+                    <li class="menu-item">
+                        <a href="cart.html" class="bag-icon"><i class="fa-solid fa-bag-shopping"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+
+    <script>
+      // Toggle mobile menu
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('nav-menu');
+
+      hamburger.addEventListener('click', () => {
+          navMenu.classList.toggle('mobile-visible');
+      });
+
+      // Toggle dropdown menus
+      const dropdownToggles = document.querySelectorAll('.toggle-dropdown');
+      dropdownToggles.forEach(toggle => {
+          toggle.addEventListener('click', () => {
+              const dropdownMenu = toggle.nextElementSibling;
+              dropdownMenu.classList.toggle('hidden');
+              const indicator = toggle.querySelector('.indicator');
+              if (indicator.classList.contains('fa-chevron-down')) {
+                  indicator.classList.remove('fa-chevron-down');
+                  indicator.classList.add('fa-chevron-up');
+              } else {
+                  indicator.classList.remove('fa-chevron-up');
+                  indicator.classList.add('fa-chevron-down');
+              }
+          });
+      });
+  </script>
+
+  <link rel="stylesheet" href="cart.css">
+  <link rel="stylesheet" href="styles.css">
+  <title>My Cart</title>
+  
+  
+</head>
+<body>
+  <div class="cart-container">
+    <h1 class="cart-title">CART</h1>
+    <table class="cart-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>PRODUCT</th>
+          <th>PRICE</th>
+          <th>QUANTITY</th>
+          <th>SUBTOTAL</th>
+        </tr>
+      </thead>
+      <tbody id="cart-items">
+        <!-- Items will be dynamically added here -->
+      </tbody>
+    </table>
+    <div class="cart-total">
+      <span class="total-label">Total:</span>
+      <span class="total-amount" id="total-amount">₹0.00</span>
+    </div>
+  </div>
+  <script>
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+      document.getElementById('cart-count').innerText = totalItems;
+    }
+
+    function displayCart() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartContainer = document.getElementById('cart-items');
+      const totalAmountElement = document.getElementById('total-amount');
+      let totalAmount = 0;
+
+      cartContainer.innerHTML = ''; // Clear the cart display
+
+      if (cart.length === 0) {
+        cartContainer.innerHTML = '<tr><td colspan="5">Your cart is empty!</td></tr>';
+        totalAmountElement.innerText = '₹0.00';
+        updateCartCount();
+        return;
+      }
+
+      cart.forEach((item, index) => {
+        const subtotal = (item.price * item.quantity).toFixed(2);
+        totalAmount += parseFloat(subtotal);
+
+        const row = `
+          <tr>
+            <td><img src="${item.image}" alt="${item.name}"></td>
+            <td>${item.name}</td>
+            <td>₹${item.price}</td>
+            <td>
+              <button onclick="updateQuantity(${index}, -1)">-</button>
+              ${item.quantity}
+              <button onclick="updateQuantity(${index}, 1)">+</button>
+            </td>
+            <td>₹${subtotal}</td>
+            <td><button class="remove-btn" onclick="removeItem(${index})">×</button></td>
+          </tr>
+        `;
+        cartContainer.innerHTML += row;
+      });
+
+      totalAmountElement.innerText = `₹${totalAmount.toFixed(2)}`;
+      updateCartCount();
+    }
+
+    function updateQuantity(index, change) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      if (cart[index]) {
+        cart[index].quantity += change;
+
+        // Prevent the quantity from going below 1
+        if (cart[index].quantity < 1) {
+          cart[index].quantity = 1;
+        }
+
+        // Save the updated cart to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Update the cart display
+        displayCart();
+      }
+    }
+
+    function removeItem(index) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      // Remove the item at the given index
+      cart.splice(index, 1);
+
+      // Save the updated cart to localStorage
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      // Update the cart display
+      displayCart();
+    }
+
+    // Load the cart and display it on page load
+    window.onload = () => {
+      displayCart();
+      updateCartCount();
+    };
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+<footer class="footer">
+  <div class="container">
+    <div class="footer-section">
+      <h2>Restaurant</h2>
+      <p>"A genuine fine-dining experience awaits. Come for a drink, stay for a meal. Great food and great company. Nothing brings people together like good food."</p>
+      <div class="social-icons">
+        <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#" class="social-icon"><i class="fa-brands fa-pinterest"></i></a>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h3>Working Hours</h3>
+      <p>Monday - Friday: 11 am - 11 pm</p>
+      <p>Saturday: 10 am - 11 pm</p>
+      <p>Sunday: 10 am - 11 pm</p>
+      <p><strong>* Happy Hour: 12:00 - 4:00 *</strong></p>
+    </div>
+    <div class="footer-section">
+      <h3>Our Address</h3>
+      <p>PRAJAY PRINCETON TOWERS, #502, 5th Floor, Hyderabad, Telangana-500035</p>
+      <p><i class="fa fa-phone"></i> <span> +91 8247547854</span></p>
+      <p><i class="fa fa-envelope"></i> <a href="Advoize2023@gmail.com">Advoize2023@gmail.com</a></p>
+    </div>
+    <div class="footer-section">
+      <h3>Newsletter</h3>
+      <p>Receive the latest news from us.</p>
+      <form>
+        <input type="email" placeholder="Your Email Address" required>
+        <button type="submit">Subscribe</button>
+        <div>
+          <input type="checkbox" id="privacy" required>
+          <label for="privacy">I agree to the Privacy Policy</label>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 Advoize, All Rights Reserved</p>
+   
+    
+  </div>
+</footer>
+
+</body>
+</html>
